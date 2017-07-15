@@ -128,4 +128,18 @@ li.active {
   width: 100%; }
 
 #hero {
-  background-color: #0aa1da; }
+  background-color: #0aa1da;
+  z-index: 1; }
+
+#description {
+  -webkit-box-shadow: inset 0px 9px 7px 0px rgba(57, 65, 69, 0.81);
+  -moz-box-shadow: inset 0px 9px 7px 0px rgba(57, 65, 69, 0.81);
+  box-shadow: inset 0px 9px 7px 0px rgba(57, 65, 69, 0.81);
+  background-color: #5b666c;
+  z-index: -1; }
+  #description section .gradient {
+    padding: 2%; }
+    #description section .gradient p {
+      margin-bottom: 0;
+      color: white;
+      text-align: center; }
