@@ -1,7 +1,10 @@
 .social-links {
     background-color: $light-blue;
     img {
-        width: inherit;
+        width: 40%;
+        &:hover {
+            transform: scale(1.5);
+        }
     }
     .col-xs-4 {
         text-align: center;

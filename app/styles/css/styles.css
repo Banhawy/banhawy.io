@@ -98,7 +98,9 @@ li.active {
 .social-links {
   background-color: #0aa1da; }
   .social-links img {
-    width: inherit; }
+    width: 40%; }
+    .social-links img:hover {
+      transform: scale(1.5); }
   .social-links .col-xs-4 {
     text-align: center; }
   .social-links .logos {
