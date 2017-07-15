@@ -1,7 +1,27 @@
-nav {
+nav .container {
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+
+nav .nav-links {
   background-color: #028cd5; }
-  nav a {
-    color: white; }
+  nav .nav-links li {
+    margin-right: 2px;
+    line-height: 1.428571429;
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px 15px 15px; }
+    nav .nav-links li:active {
+      border-bottom: 3px solid white;
+      border-radius: 4px 4px 0 0; }
+    nav .nav-links li:hover {
+      border-bottom: 3px solid white;
+      border-radius: 4px 4px 0 0;
+      font-weight: bold; }
+    nav .nav-links li a {
+      color: white; }
+      nav .nav-links li a:hover {
+        text-decoration: none; }
 
 .navbar {
   border-radius: 0px; }
