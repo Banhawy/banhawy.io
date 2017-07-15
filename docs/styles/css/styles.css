@@ -130,12 +130,25 @@ li.active {
 #hero {
   background-color: #0aa1da;
   z-index: 1;
-  width: 100%;
+  text-align: center;
   max-height: 50%; }
   #hero .container {
     width: 100%; }
   #hero img {
-    width: 100%; }
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 0px solid #000000; }
+  @media screen and (max-width: 400px) {
+    #hero .col-xs-7 {
+      width: 100%; }
+    #hero .col-xs-5 {
+      width: 100%; } }
+
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: table; }
 
 #description {
   -webkit-box-shadow: inset 0px 9px 7px 0px rgba(57, 65, 69, 0.81);
