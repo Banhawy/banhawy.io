@@ -129,7 +129,13 @@ li.active {
 
 #hero {
   background-color: #0aa1da;
-  z-index: 1; }
+  z-index: 1;
+  width: 100%;
+  max-height: 50%; }
+  #hero .container {
+    width: 100%; }
+  #hero img {
+    width: 100%; }
 
 #description {
   -webkit-box-shadow: inset 0px 9px 7px 0px rgba(57, 65, 69, 0.81);
@@ -142,4 +148,5 @@ li.active {
     #description section .gradient p {
       margin-bottom: 0;
       color: white;
-      text-align: center; }
+      text-align: center;
+      font-size: 1.2em; }

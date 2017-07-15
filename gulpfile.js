@@ -18,15 +18,15 @@ gulp.task('hello', function() {
 gulp.task('browserSync', function() {
     browserSync({
         server: {
-            baseDir: 'app'
+            baseDir: 'docs'
         }
     })
 })
 
 gulp.task('sass', function() {
-    return gulp.src('app/styles/sass/**/*.scss') // Gets all files ending with .scss in app/scss and children dirs
+    return gulp.src('docs/styles/sass/**/*.scss') // Gets all files ending with .scss in docs/scss and children dirs
         .pipe(sass().on('error', sass.logError)) // Passes it through a gulp-sass, log errors to console
-        .pipe(gulp.dest('app/styles/css')) // Outputs it in the css folder
+        .pipe(gulp.dest('docs/styles/css')) // Outputs it in the css folder
         .pipe(browserSync.reload({ // Reloading with Browser Sync
             stream: true
         }));
@@ -34,9 +34,9 @@ gulp.task('sass', function() {
 
 // Watchers
 gulp.task('watch', function() {
-    gulp.watch('app//styles/sass/**/*.scss', ['sass']);
-    gulp.watch('app/**/*.html', browserSync.reload);
-    gulp.watch('app/js/**/*.js', browserSync.reload);
+    gulp.watch('docs//styles/sass/**/*.scss', ['sass']);
+    gulp.watch('docs/**/*.html', browserSync.reload);
+    gulp.watch('docs/js/**/*.js', browserSync.reload);
 })
 
 // Optimization Tasks 
@@ -45,7 +45,7 @@ gulp.task('watch', function() {
 // Optimizing CSS and JavaScript 
 gulp.task('useref', function() {
 
-    return gulp.src('app/*.html')
+    return gulp.src('docs/*.html')
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', cssnano()))
@@ -56,7 +56,7 @@ gulp.task('useref', function() {
 // ---------------
 
 gulp.task('default', function(callback) {
-    runSequence(['sass', 'browserSync'], 'watch',
+    runSequence(['hello', 'sass', 'browserSync'], 'watch',
         callback
     )
 })
