@@ -23,17 +23,23 @@
     <nav>
         <div class="container">
             <ul class="nav-links">
-                <li class="active"><a href="#">HELLO</a></li>
+                <li class="active"><a href="#">ABOUT</a></li>
                 <li><a href="">RESUME</a></li>
                 <li><a href="">PORTFOLIO</a></li>
             </ul>
+            <div class="menu" onclick="openNav()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </div>
-        <!-- <ul class="nav nav-tabs">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">Profile</a></li>
-            <li role="presentation"><a href="#">Messages</a></li>
-        </ul> -->
     </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">ABOUT</a>
+        <a href="#">RESUME</a>
+        <a href="#">PORTFOLIO</a>
+    </div>
 </body>
 
 </html>
