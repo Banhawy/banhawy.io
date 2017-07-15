@@ -95,6 +95,9 @@ li.active {
   li.active a:hover {
     font-weight: 700; }
 
+#main {
+  width: 100%; }
+
 .social-links {
   background-color: #0aa1da; }
   .social-links img {
@@ -123,3 +126,6 @@ li.active {
 #email {
   float: right;
   width: 100%; }
+
+#hero {
+  background-color: #0aa1da; }
