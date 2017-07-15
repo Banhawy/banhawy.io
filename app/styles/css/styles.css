@@ -94,3 +94,16 @@ li.active {
   font-weight: 700; }
   li.active a:hover {
     font-weight: 700; }
+
+.social-links {
+  background-color: #0aa1da; }
+
+.footer {
+  background-color: #028cd5; }
+  .footer p {
+    font-size: smaller;
+    overflow: auto; }
+
+#email {
+  float: right;
+  width: 100%; }
