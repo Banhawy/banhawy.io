@@ -1,9 +1,12 @@
 .social-links {
     background-color: $light-blue;
     img {
-        width: 40%;
+        width: 25%;
         &:hover {
             transform: scale(1.5);
+        }
+        @media screen and (max-width: 500px) {
+            width: 40%;
         }
     }
     .col-xs-4 {
@@ -16,9 +19,15 @@
 
 .footer {
     background-color: $dark-blue;
+    .row {
+        margin-top: 2%;
+        text-align: center;
+    }
     p {
         font-size: smaller;
         overflow: auto;
+        color: white;
+        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
     }
 }
 

@@ -98,9 +98,12 @@ li.active {
 .social-links {
   background-color: #0aa1da; }
   .social-links img {
-    width: 40%; }
+    width: 25%; }
     .social-links img:hover {
       transform: scale(1.5); }
+    @media screen and (max-width: 500px) {
+      .social-links img {
+        width: 40%; } }
   .social-links .col-xs-4 {
     text-align: center; }
   .social-links .logos {
@@ -108,9 +111,14 @@ li.active {
 
 .footer {
   background-color: #028cd5; }
+  .footer .row {
+    margin-top: 2%;
+    text-align: center; }
   .footer p {
     font-size: smaller;
-    overflow: auto; }
+    overflow: auto;
+    color: white;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy; }
 
 #email {
   float: right;
