@@ -1,4 +1,4 @@
-$small: 331px;
+$small: 334px;
 @media screen and (max-width: $small) {
     nav {
         li {
@@ -12,7 +12,10 @@ nav {
         width: 100%;
         padding: 0;
         margin: 0;
-        background-color: #028cd5;
+        background-color: $dark-blue;
+    }
+    ul {
+        margin-bottom: 0;
     }
     .nav-links {
         li {
@@ -26,15 +29,9 @@ nav {
             }
             a {
                 color: white;
-                &:active {
-                    border-bottom: 3px solid white;
-                    border-radius: 4px 4px 0 0;
-                }
                 &:hover {
                     text-decoration: none;
-                    border-bottom: 3px solid white;
-                    border-radius: 4px 4px 0 0;
-                    font-weight: bold;
+                    font-weight: 700;
                 }
             }
         }
@@ -85,6 +82,13 @@ nav {
     @media screen and (max-height: 450px) {
         padding-top: 15px;
     }
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
     a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
@@ -98,10 +102,6 @@ nav {
         &:hover {
             color: #f1f1f1;
         }
-        .closebtn {
-            float: right;
-            display: inline-block;
-        }
     }
 }
 
@@ -109,6 +109,18 @@ nav {
     a {
         &:focus {
             color: #f1f1f1;
+        }
+    }
+}
+
+li.active {
+    text-decoration: none;
+    border-bottom: 3px solid white;
+    border-radius: 4px 4px 0 0;
+    font-weight: 700;
+    a {
+        &:hover {
+            font-weight: 700;
         }
     }
 }

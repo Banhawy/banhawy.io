@@ -1,4 +1,4 @@
-@media screen and (max-width: 331px) {
+@media screen and (max-width: 334px) {
   nav li {
     display: block; } }
 
@@ -8,30 +8,28 @@ nav .container {
   margin: 0;
   background-color: #028cd5; }
 
+nav ul {
+  margin-bottom: 0; }
+
 nav .nav-links li {
   margin-right: 2px;
   line-height: 1.428571429;
   position: relative;
   display: inline-block;
   padding: 10px 15px 15px 15px; }
-  @media screen and (max-width: 331px) {
+  @media screen and (max-width: 334px) {
     nav .nav-links li {
       display: none; } }
   nav .nav-links li a {
     color: white; }
-    nav .nav-links li a:active {
-      border-bottom: 3px solid white;
-      border-radius: 4px 4px 0 0; }
     nav .nav-links li a:hover {
       text-decoration: none;
-      border-bottom: 3px solid white;
-      border-radius: 4px 4px 0 0;
-      font-weight: bold; }
+      font-weight: 700; }
 
 nav .menu {
   float: right;
   display: none; }
-  @media screen and (max-width: 331px) {
+  @media screen and (max-width: 334px) {
     nav .menu {
       display: inline-block;
       margin: 0 3% 1% 0; } }
@@ -67,6 +65,12 @@ nav .menu {
   @media screen and (max-height: 450px) {
     .sidenav {
       padding-top: 15px; } }
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px; }
   .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -79,9 +83,14 @@ nav .menu {
         font-size: 18px; } }
     .sidenav a:hover {
       color: #f1f1f1; }
-    .sidenav a .closebtn {
-      float: right;
-      display: inline-block; }
 
 .offcanvas a:focus {
   color: #f1f1f1; }
+
+li.active {
+  text-decoration: none;
+  border-bottom: 3px solid white;
+  border-radius: 4px 4px 0 0;
+  font-weight: 700; }
+  li.active a:hover {
+    font-weight: 700; }
