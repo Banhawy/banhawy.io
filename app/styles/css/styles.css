@@ -97,6 +97,12 @@ li.active {
 
 .social-links {
   background-color: #0aa1da; }
+  .social-links img {
+    width: inherit; }
+  .social-links .col-xs-4 {
+    text-align: center; }
+  .social-links .logos {
+    margin: 3% 5%; }
 
 .footer {
   background-color: #028cd5; }

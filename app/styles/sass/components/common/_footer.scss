@@ -1,5 +1,14 @@
 .social-links {
     background-color: $light-blue;
+    img {
+        width: inherit;
+    }
+    .col-xs-4 {
+        text-align: center;
+    }
+    .logos {
+        margin: 3% 5%;
+    }
 }
 
 .footer {
