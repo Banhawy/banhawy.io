@@ -64,13 +64,14 @@
     }
     #aside {
         float: left;
-        width: 100%;
+        width: 60%;
         .info {
             width: 90%;
             margin-left: 2%;
         }
         .row {
-            border-bottom: 1px solid grey;
+            border-bottom: 1px solid #cac0c0;
+            width: 80%;
         }
     }
     #work {
