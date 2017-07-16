@@ -136,7 +136,8 @@ li.active {
   max-height: 50%; }
   #hero .container {
     width: 100%; }
-  #hero h1, #hero h2 {
+  #hero h1,
+  #hero h2 {
     color: white; }
   #hero img {
     border-radius: 200px 200px 200px 200px;
@@ -168,7 +169,7 @@ li.active {
       font-size: 1.2em; }
 
 .cv {
-  display: inline-flex;
+  display: flex;
   width: 100%; }
   .cv h3 {
     color: #028cd5; }

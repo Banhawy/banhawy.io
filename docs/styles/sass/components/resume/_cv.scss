@@ -1,6 +1,7 @@
 .container {
     width: 100%;
 }
+
 #hero {
     background-color: $light-blue;
     // z-index: 1;
@@ -10,8 +11,9 @@
     .container {
         width: 100%;
     }
-    h1,h2 {
-      color: white;
+    h1,
+    h2 {
+        color: white;
     }
     img {
         border-radius: 200px 200px 200px 200px;
@@ -54,30 +56,28 @@
     }
 }
 
-.cv{
-  display: inline-flex;
-  width: 100%;
-  h3 {
-    color: $dark-blue;
-  }
-#aside{
-  float: left;
-  width: 100%;
-
-  .info{
-    width: 90%;
-    margin-left: 2%;
-  }
-  .row{
-    border-bottom: 1px solid grey;
-  }
-}
-
-#work {
-  float: right;
-  width: 100%;
-  -webkit-box-shadow: inset 9px 0px 11px -5px rgba(0,0,0,0.23);
--moz-box-shadow: inset 9px 0px 11px -5px rgba(0,0,0,0.23);
-box-shadow: inset 9px 0px 11px -5px rgba(0,0,0,0.23);
-}
+.cv {
+    display: flex;
+    width: 100%;
+    h3 {
+        color: $dark-blue;
+    }
+    #aside {
+        float: left;
+        width: 100%;
+        .info {
+            width: 90%;
+            margin-left: 2%;
+        }
+        .row {
+            border-bottom: 1px solid grey;
+        }
+    }
+    #work {
+        float: right;
+        width: 100%;
+        -webkit-box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
+        -moz-box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
+        box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
+    }
 }
