@@ -1,3 +1,6 @@
+.container {
+    width: 100%;
+}
 #hero {
     background-color: $light-blue;
     z-index: 1;
@@ -46,4 +49,18 @@
             }
         }
     }
+}
+
+.cv{
+  display: inline-flex;
+#aside{
+  float: left;
+}
+
+#work {
+  float: right;
+  -webkit-box-shadow: inset 9px 0px 11px -5px rgba(0,0,0,0.23);
+-moz-box-shadow: inset 9px 0px 11px -5px rgba(0,0,0,0.23);
+box-shadow: inset 9px 0px 11px -5px rgba(0,0,0,0.23);
+}
 }

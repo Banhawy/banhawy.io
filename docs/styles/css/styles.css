@@ -127,6 +127,9 @@ li.active {
   float: right;
   width: 100%; }
 
+.container {
+  width: 100%; }
+
 #hero {
   background-color: #0aa1da;
   z-index: 1;
@@ -163,3 +166,13 @@ li.active {
       color: white;
       text-align: center;
       font-size: 1.2em; }
+
+.cv {
+  display: inline-flex; }
+  .cv #aside {
+    float: left; }
+  .cv #work {
+    float: right;
+    -webkit-box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
+    box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23); }
