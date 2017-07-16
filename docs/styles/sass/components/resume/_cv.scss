@@ -107,5 +107,44 @@
         -webkit-box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
         -moz-box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
         box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
+        @media screen and (max-width: 610px) {
+            -webkit-box-shadow: inset 0px 9px 26px -10px rgba(0, 0, 0, 0.65);
+            -moz-box-shadow: inset 0px 9px 26px -10px rgba(0, 0, 0, 0.65);
+            box-shadow: inset 0px 9px 26px -10px rgba(0, 0, 0, 0.65);
+        }
+        .timeline {
+            $t-padding: 20px;
+            list-style: none;
+            padding: $t-padding;
+            margin: 0;
+            position: relative;
+            &:after {
+                content: '';
+                width: 1px;
+                height: 100%;
+                background-color: #ddd;
+                position: absolute;
+                top: $t-padding;
+                left: 34px;
+                z-index: -1;
+            }
+            li {
+                margin-bottom: 5%;
+                .job {
+                    margin-left: 4em;
+                    margin-top: -3.8em;
+                }
+                i {
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    text-align: center;
+                    line-height: 30px;
+                    border: 1px solid #ddd;
+                    border-radius: 50%;
+                    background-color: white;
+                }
+            }
+        }
     }
 }

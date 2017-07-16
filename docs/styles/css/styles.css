@@ -207,3 +207,36 @@ li.active {
     -webkit-box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
     -moz-box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23);
     box-shadow: inset 9px 0px 11px -5px rgba(0, 0, 0, 0.23); }
+    @media screen and (max-width: 610px) {
+      .cv #work {
+        -webkit-box-shadow: inset 0px 9px 26px -10px rgba(0, 0, 0, 0.65);
+        -moz-box-shadow: inset 0px 9px 26px -10px rgba(0, 0, 0, 0.65);
+        box-shadow: inset 0px 9px 26px -10px rgba(0, 0, 0, 0.65); } }
+    .cv #work .timeline {
+      list-style: none;
+      padding: 20px;
+      margin: 0;
+      position: relative; }
+      .cv #work .timeline:after {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: #ddd;
+        position: absolute;
+        top: 20px;
+        left: 34px;
+        z-index: -1; }
+      .cv #work .timeline li {
+        margin-bottom: 5%; }
+        .cv #work .timeline li .job {
+          margin-left: 4em;
+          margin-top: -3.8em; }
+        .cv #work .timeline li i {
+          width: 30px;
+          height: 30px;
+          display: block;
+          text-align: center;
+          line-height: 30px;
+          border: 1px solid #ddd;
+          border-radius: 50%;
+          background-color: white; }
