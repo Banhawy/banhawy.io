@@ -212,41 +212,87 @@ li.active {
         -webkit-box-shadow: inset 0px 9px 26px -10px rgba(0, 0, 0, 0.65);
         -moz-box-shadow: inset 0px 9px 26px -10px rgba(0, 0, 0, 0.65);
         box-shadow: inset 0px 9px 26px -10px rgba(0, 0, 0, 0.65); } }
-    .cv #work .timeline {
+    .cv #work .timeline#job {
       list-style: none;
-      padding: 20px;
+      padding: 0;
       margin: 0;
       position: relative; }
-      .cv #work .timeline h4 {
+      .cv #work .timeline#job h4 {
         display: inline-block;
         font-weight: 600; }
-      .cv #work .timeline span {
+      .cv #work .timeline#job span {
         float: right;
         font-weight: 600;
         margin-top: 10px;
         margin-bottom: 10px; }
         @media screen and (max-width: 1024px) {
-          .cv #work .timeline span {
+          .cv #work .timeline#job span {
             float: none;
             display: block; } }
-      .cv #work .timeline:after {
+      .cv #work .timeline#job:after {
         content: '';
         width: 1px;
-        height: 95%;
+        height: 96%;
         background-color: #ddd;
         position: absolute;
-        top: 35px;
-        left: 34px;
+        top: 24px;
+        bottom: 12px;
+        left: 15px;
         z-index: -1; }
-      .cv #work .timeline ul {
+      .cv #work .timeline#job ul {
         display: block; }
-      .cv #work .timeline li {
+      .cv #work .timeline#job li {
         margin-bottom: 0.5em; }
-        .cv #work .timeline li .job {
+        .cv #work .timeline#job li .job {
           margin-left: 4em;
           margin-top: -2.8em;
           border-bottom: 1px solid #cac0c0; }
-        .cv #work .timeline li i {
+        .cv #work .timeline#job li i {
+          width: 30px;
+          height: 30px;
+          margin-top: 1em;
+          display: block;
+          text-align: center;
+          line-height: 30px;
+          border: 1px solid #ddd;
+          border-radius: 50%;
+          background-color: white; }
+    .cv #work .timeline#edu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      position: relative; }
+      .cv #work .timeline#edu h4 {
+        display: inline-block;
+        font-weight: 600; }
+      .cv #work .timeline#edu span {
+        float: right;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: 10px; }
+        @media screen and (max-width: 1024px) {
+          .cv #work .timeline#edu span {
+            float: none;
+            display: block; } }
+      .cv #work .timeline#edu:after {
+        content: '';
+        width: 1px;
+        height: 88%;
+        background-color: #ddd;
+        position: absolute;
+        top: 24px;
+        bottom: 12px;
+        left: 15px;
+        z-index: -1; }
+      .cv #work .timeline#edu ul {
+        display: block; }
+      .cv #work .timeline#edu li {
+        margin-bottom: 0.5em; }
+        .cv #work .timeline#edu li .job {
+          margin-left: 4em;
+          margin-top: -2.8em;
+          border-bottom: 1px solid #cac0c0; }
+        .cv #work .timeline#edu li i {
           width: 30px;
           height: 30px;
           margin-top: 1em;
