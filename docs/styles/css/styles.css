@@ -217,6 +217,15 @@ li.active {
       padding: 20px;
       margin: 0;
       position: relative; }
+      .cv #work .timeline h4 {
+        display: inline-block;
+        font-weight: 600; }
+      .cv #work .timeline span {
+        float: right;
+        display: inline-block;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: 10px; }
       .cv #work .timeline:after {
         content: '';
         width: 1px;
@@ -227,13 +236,15 @@ li.active {
         left: 34px;
         z-index: -1; }
       .cv #work .timeline li {
-        margin-bottom: 5%; }
+        margin-bottom: 0.5em; }
         .cv #work .timeline li .job {
           margin-left: 4em;
-          margin-top: -3.8em; }
+          margin-top: -2.8em;
+          border-bottom: 1px solid #cac0c0; }
         .cv #work .timeline li i {
           width: 30px;
           height: 30px;
+          margin-top: 1em;
           display: block;
           text-align: center;
           line-height: 30px;
