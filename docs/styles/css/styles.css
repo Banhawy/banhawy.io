@@ -171,11 +171,20 @@ li.active {
 .cv {
   display: flex;
   width: 100%; }
+  @media screen and (max-width: 610px) {
+    .cv {
+      display: block; } }
   .cv h3 {
     color: #028cd5; }
   .cv #aside {
     float: left;
     width: 45%; }
+    @media screen and (max-width: 1024px) {
+      .cv #aside {
+        width: 100%; } }
+    @media screen and (max-width: 610px) {
+      .cv #aside {
+        float: none; } }
     .cv #aside .container {
       width: 90%;
       margin-left: 2%;
@@ -183,6 +192,11 @@ li.active {
     .cv #aside .container.info .row {
       border-bottom: 1px solid #cac0c0;
       width: 95%; }
+      .cv #aside .container.info .row h5 {
+        padding-left: 1%; }
+      .cv #aside .container.info .row h4 {
+        font-size: 14px;
+        font-weight: bold; }
     .cv #aside .software p {
       font-weight: bold; }
     .cv #aside .software progress {

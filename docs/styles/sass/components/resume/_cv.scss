@@ -59,12 +59,21 @@
 .cv {
     display: flex;
     width: 100%;
+    @media screen and (max-width: 610px) {
+        display: block;
+    }
     h3 {
         color: $dark-blue;
     }
     #aside {
         float: left;
         width: 45%;
+        @media screen and (max-width: 1024px) {
+            width: 100%;
+        }
+        @media screen and (max-width:610px) {
+            float: none;
+        }
         .container {
             width: 90%;
             margin-left: 2%;
@@ -74,6 +83,13 @@
             .row {
                 border-bottom: 1px solid #cac0c0;
                 width: 95%;
+                h5 {
+                    padding-left: 1%;
+                }
+                h4 {
+                    font-size: 14px;
+                    font-weight: bold;
+                }
             }
         }
         .software {
