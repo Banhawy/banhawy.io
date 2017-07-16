@@ -175,13 +175,18 @@ li.active {
     color: #028cd5; }
   .cv #aside {
     float: left;
-    width: 60%; }
-    .cv #aside .info {
+    width: 45%; }
+    .cv #aside .container {
       width: 90%;
-      margin-left: 2%; }
-    .cv #aside .row {
+      margin-left: 2%;
+      margin-right: 0; }
+    .cv #aside .container.info .row {
       border-bottom: 1px solid #cac0c0;
-      width: 80%; }
+      width: 95%; }
+    .cv #aside .software p {
+      font-weight: bold; }
+    .cv #aside .software progress {
+      width: 100%; }
   .cv #work {
     float: right;
     width: 100%;

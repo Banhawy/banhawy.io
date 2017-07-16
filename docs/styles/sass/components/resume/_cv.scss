@@ -64,14 +64,25 @@
     }
     #aside {
         float: left;
-        width: 60%;
-        .info {
+        width: 45%;
+        .container {
             width: 90%;
             margin-left: 2%;
+            margin-right: 0;
         }
-        .row {
-            border-bottom: 1px solid #cac0c0;
-            width: 80%;
+        .container.info {
+            .row {
+                border-bottom: 1px solid #cac0c0;
+                width: 95%;
+            }
+        }
+        .software {
+            p {
+                font-weight: bold;
+            }
+            progress {
+                width: 100%;
+            }
         }
     }
     #work {
