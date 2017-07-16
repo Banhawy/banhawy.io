@@ -136,10 +136,10 @@
              &:after {
                  content: '';
                  width: 1px;
-                 height: 100%;
+                 height: 95%;
                  background-color: #ddd;
                  position: absolute;
-                 top: $t-padding;
+                 top: $t-padding+15;
                  left: 34px;
                  z-index: -1;
              }
