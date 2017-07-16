@@ -1,0 +1,53 @@
+@mixin timeline($padding, $top, $left, $height) {
+    list-style: none;
+    padding: $padding;
+    margin: 0;
+    position: relative;
+    h4 {
+        display: inline-block;
+        font-weight: 600;
+    }
+    span {
+        float: right;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        @media screen and (max-width: 1024px) {
+            float: none;
+            display: block;
+        }
+    }
+    &:after {
+        content: '';
+        width: 1px;
+        height: $height;
+        background-color: #ddd;
+        position: absolute;
+        top: $top;
+        bottom: 12px;
+        left: $left;
+        z-index: -1;
+    }
+    ul {
+        display: block;
+    }
+    li {
+        margin-bottom: 0.5em;
+        .job {
+            margin-left: 4em;
+            margin-top: -2.8em;
+            border-bottom: $grey-border;
+        }
+        i {
+            width: 30px;
+            height: 30px;
+            margin-top: 1em;
+            display: block;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            background-color: white;
+        }
+    }
+}
