@@ -222,10 +222,13 @@ li.active {
         font-weight: 600; }
       .cv #work .timeline span {
         float: right;
-        display: inline-block;
         font-weight: 600;
         margin-top: 10px;
         margin-bottom: 10px; }
+        @media screen and (max-width: 1024px) {
+          .cv #work .timeline span {
+            float: none;
+            display: block; } }
       .cv #work .timeline:after {
         content: '';
         width: 1px;
@@ -235,6 +238,8 @@ li.active {
         top: 20px;
         left: 34px;
         z-index: -1; }
+      .cv #work .timeline ul {
+        display: block; }
       .cv #work .timeline li {
         margin-bottom: 0.5em; }
         .cv #work .timeline li .job {
