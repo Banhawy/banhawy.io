@@ -6055,6 +6055,11 @@ li.active {
   -webkit-box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75); }
+  @media screen and (max-width: 766px) {
+    .about {
+      -webkit-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
+      -moz-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
+      box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68); } }
   .about h1 {
     text-align: center;
     text-shadow: 0px 6px 6px #6f7070; }
