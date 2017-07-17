@@ -6224,4 +6224,5 @@ li.active {
       display: inline-block;
       margin: 2%; }
       .cv #work .circle .circles-text h4 {
+        font-family: sans-serif;
         margin-top: 2.5em; }
