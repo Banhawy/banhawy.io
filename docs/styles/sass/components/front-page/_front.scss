@@ -5,17 +5,25 @@
 }
 
 .about {
+    padding: 2%;
+    -webkit-box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
     h1 {
         text-align: center;
         text-shadow: 0px 6px 6px #6f7070;
+    }
+    p {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: large;
     }
 }
 
 .front-hero {
     float: right;
+    width: 100%;
     img {
         width: 100%;
-        height: 100%;
         text-align: center;
         -webkit-filter: hue-rotate(129deg);
         filter: hue-rotate(129deg);
