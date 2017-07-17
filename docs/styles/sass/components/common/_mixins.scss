@@ -1,15 +1,10 @@
-@mixin white-cards($p-font, $h1-shadow) {
+@mixin white-cards($p-font, $h1-shadow, $margin-bot) {
     padding: 2%;
     margin-top: 1%;
-    margin-bottom: 10%;
-    -webkit-box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
-    @media screen and (max-width: 766px) {
-        -webkit-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
-        -moz-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
-        box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
-    }
+    margin-bottom: $margin-bot;
+    -webkit-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
+    -moz-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
+    box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
     h1 {
         text-align: center;
         text-shadow: $h1-shadow;

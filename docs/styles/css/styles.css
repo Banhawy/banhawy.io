@@ -6048,31 +6048,29 @@ li.active {
   clear: both;
   display: table; }
 
-.about {
+.front-page .about {
   padding: 2%;
   margin-top: 1%;
-  margin-bottom: 10%;
-  -webkit-box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 16px 25px 5px rgba(0, 0, 0, 0.75); }
-  @media screen and (max-width: 766px) {
-    .about {
-      -webkit-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
-      -moz-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
-      box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68); } }
-  .about h1 {
+  margin-bottom: 1%;
+  -webkit-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68);
+  box-shadow: -1px 16px 25px -12px rgba(0, 0, 0, 0.68); }
+  .front-page .about h1 {
     text-align: center;
     text-shadow: 0px 6px 6px #6f7070; }
-  .about p {
+  .front-page .about p {
     font-family: "Josefin Sans", sans-serif;
     font-size: large; }
 
-.front-hero {
+.front-page .col-lg-7 {
+  padding-right: 0; }
+
+.front-page .front-hero {
   float: right;
   width: 100%; }
-  .front-hero img {
+  .front-page .front-hero img {
     width: 100%;
-    text-align: center;
+    text-align: right;
     -webkit-filter: hue-rotate(129deg);
     filter: hue-rotate(129deg); }
 

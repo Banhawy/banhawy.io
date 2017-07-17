@@ -4,19 +4,23 @@
     display: table;
 }
 
-.about {
-    $h1-shadow: 0px 6px 6px #6f7070;
-    $p-font: 'Josefin Sans', sans-serif;
-    @include white-cards($p-font, $h1-shadow);
-}
-
-.front-hero {
-    float: right;
-    width: 100%;
-    img {
+.front-page {
+    .about {
+        $h1-shadow: 0px 6px 6px #6f7070;
+        $p-font: 'Josefin Sans', sans-serif;
+        @include white-cards($p-font, $h1-shadow, 1%);
+    }
+    .col-lg-7 {
+        padding-right: 0;
+    }
+    .front-hero {
+        float: right;
         width: 100%;
-        text-align: center;
-        -webkit-filter: hue-rotate(129deg);
-        filter: hue-rotate(129deg);
+        img {
+            width: 100%;
+            text-align: right;
+            -webkit-filter: hue-rotate(129deg);
+            filter: hue-rotate(129deg);
+        }
     }
 }
