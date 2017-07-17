@@ -5,11 +5,9 @@
 }
 
 .about {
-    // float: left;
-    // max-width: 50%;
-    // margin: 4%;
     h1 {
         text-align: center;
+        text-shadow: 0px 6px 6px #6f7070;
     }
 }
 
@@ -19,5 +17,7 @@
         width: 100%;
         height: 100%;
         text-align: center;
+        -webkit-filter: hue-rotate(129deg);
+        filter: hue-rotate(129deg);
     }
 }
