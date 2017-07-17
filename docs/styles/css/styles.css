@@ -6062,8 +6062,9 @@ li.active {
     font-family: "Josefin Sans", sans-serif;
     font-size: large; }
 
-.front-page .col-lg-7 {
-  padding-right: 0; }
+@media screen and (min-width: 1200px) {
+  .front-page .col-lg-7 {
+    padding-right: 0; } }
 
 .front-page .front-hero {
   float: right;
