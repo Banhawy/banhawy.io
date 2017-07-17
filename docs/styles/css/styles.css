@@ -6052,6 +6052,8 @@ li.active {
   max-height: 50%; }
   #hero .container {
     width: 100%; }
+    #hero .container .row {
+      margin: 3% 2%; }
   #hero h1,
   #hero h2 {
     color: white; }
@@ -6218,3 +6220,8 @@ li.active {
           border: 1px solid #ddd;
           border-radius: 50%;
           background-color: white; }
+    .cv #work .circle {
+      display: inline-block;
+      margin: 2%; }
+      .cv #work .circle .circles-text h4 {
+        margin-top: 2.5em; }
