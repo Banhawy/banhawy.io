@@ -6,6 +6,8 @@
 
 .about {
     float: left;
+    max-width: 50%;
+    margin: 4%;
     h1 {
         text-align: center;
     }
@@ -14,7 +16,7 @@
 .front-hero {
     float: right;
     img {
-        width: 70%;
-        float: right;
+        width: 100%;
+        text-align: center;
     }
 }

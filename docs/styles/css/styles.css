@@ -6049,15 +6049,17 @@ li.active {
   display: table; }
 
 .about {
-  float: left; }
+  float: left;
+  max-width: 50%;
+  margin: 4%; }
   .about h1 {
     text-align: center; }
 
 .front-hero {
   float: right; }
   .front-hero img {
-    width: 70%;
-    float: right; }
+    width: 100%;
+    text-align: center; }
 
 .container {
   width: 100%; }
