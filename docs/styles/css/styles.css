@@ -6048,17 +6048,14 @@ li.active {
   clear: both;
   display: table; }
 
-.about {
-  float: left;
-  max-width: 50%;
-  margin: 4%; }
-  .about h1 {
-    text-align: center; }
+.about h1 {
+  text-align: center; }
 
 .front-hero {
   float: right; }
   .front-hero img {
     width: 100%;
+    height: 100%;
     text-align: center; }
 
 .container {
