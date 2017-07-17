@@ -3,7 +3,7 @@
  .container {
      width: 100%;
  }
-
+ 
  #hero {
      background-color: $light-blue;
      // z-index: 1;
@@ -12,8 +12,8 @@
      max-height: 50%;
      .container {
          width: 100%;
-         .row{
-           margin: 3% 2%;
+         .row {
+             margin: 3% 2%;
          }
      }
      h1,
@@ -35,13 +35,7 @@
          }
      }
  }
-
- .clearfix:after {
-     content: '';
-     clear: both;
-     display: table;
- }
-
+ 
  #description {
      -webkit-box-shadow: inset 0px 9px 7px 0px rgba(57, 65, 69, 0.81);
      -moz-box-shadow: inset 0px 9px 7px 0px rgba(57, 65, 69, 0.81);
@@ -60,7 +54,7 @@
          }
      }
  }
-
+ 
  .cv {
      display: flex;
      width: 100%;
@@ -105,27 +99,27 @@
                  width: 100%;
              }
          }
-         .hobbies{
-           .row {
-             margin: 4%;
-           }
-           i{
-             border: 1px solid #a2cced;
-             border-radius: 30%;
-             font-size: 45px;
-             padding: 10%;
-             color: white;
-             background-color: #a2cced;
-             -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.23);
--moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.23);
-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.23);
-             @media screen and (max-width: 320px){
-               font-size: 35px;
+         .hobbies {
+             .row {
+                 margin: 4%;
              }
-           }
-           h4{
-             font-size: small;
-           }
+             i {
+                 border: 1px solid #a2cced;
+                 border-radius: 30%;
+                 font-size: 45px;
+                 padding: 10%;
+                 color: white;
+                 background-color: #a2cced;
+                 -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.23);
+                 -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.23);
+                 box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.23);
+                 @media screen and (max-width: 320px) {
+                     font-size: 35px;
+                 }
+             }
+             h4 {
+                 font-size: small;
+             }
          }
      }
      #work {
@@ -146,15 +140,14 @@ box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.23);
              @include timeline($t-padding, 15px, 24px, 88%);
          }
          .circle {
-           display: inline-block;
-           margin: 2%;
-           .circles-text {
-             h4{
-              font-family: sans-serif;
-               margin-top: 2.5em;
+             display: inline-block;
+             margin: 2%;
+             .circles-text {
+                 h4 {
+                     font-family: sans-serif;
+                     margin-top: 2.5em;
+                 }
              }
-           }
          }
-
      }
  }

@@ -6043,6 +6043,22 @@ li.active {
   float: right;
   width: 100%; }
 
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: table; }
+
+.about {
+  float: left; }
+  .about h1 {
+    text-align: center; }
+
+.front-hero {
+  float: right; }
+  .front-hero img {
+    width: 70%;
+    float: right; }
+
 .container {
   width: 100%; }
 
@@ -6067,11 +6083,6 @@ li.active {
       width: 100%; }
     #hero .col-xs-5 {
       width: 100%; } }
-
-.clearfix:after {
-  content: '';
-  clear: both;
-  display: table; }
 
 #description {
   -webkit-box-shadow: inset 0px 9px 7px 0px rgba(57, 65, 69, 0.81);
