@@ -66,13 +66,13 @@ var SassCircle = Circles.create({
     styleText: true
 });
 
-var AngularCircle = Circles.create({
+var ReactCircle = Circles.create({
     id: 'circles-5',
     radius: 60,
     value: 50,
     maxValue: 100,
     width: 10,
-    text: function() { return '<h4>AngularJS<h4>'; },
+    text: function() { return '<h4>ReactJS<h4>'; },
     colors: ['#97d5ec', '#028cd5'],
     duration: 400,
     wrpClass: 'circles-wrp',
