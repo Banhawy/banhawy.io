@@ -34,7 +34,7 @@ gulp.task('sass', function() {
 
 // Watchers
 gulp.task('watch', function() {
-    gulp.watch('docs//styles/sass/**/*.scss', ['sass']);
+    gulp.watch('docs/styles/sass/**/*.scss', ['sass']);
     gulp.watch('docs/**/*.html', browserSync.reload);
     gulp.watch('docs/js/**/*.js', browserSync.reload);
 })
