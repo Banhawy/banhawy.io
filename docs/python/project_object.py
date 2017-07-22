@@ -6,14 +6,14 @@ class Project():
         self.image_path = image_path
         self.footer = footer
 
-    def title(self):
+    def get_title(self):
         return self.title
     
-    def description(self):
+    def get_description(self):
         return self.description
 
-    def image(self):
+    def get_image(self):
         return self.image_path
     
-    def footer(self):
+    def get_footer(self):
         return self.footer
