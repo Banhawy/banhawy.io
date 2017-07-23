@@ -20,7 +20,7 @@ bulletin_board = project_object.Project('Bulletin Board', bulletin_description,
                                             'img/bulletin.png', 'https://banhawy.github.io/Bulletin-Board/')
 
 classic_tomatoes = project_object.Project('Classic Tomatoes', classic_tomatoes_description, 
-                                            'img/classicT.png', 'https://github.com/Banhawy/Classic_Tomatoes')
+                                            'img/classicT.png', 'https://banhawy.github.io/Classic_Tomatoes/')
 
 drumpfinator = project_object.Project('Make Donald Drumpf Again', drumpfinator_description, 
                                         'img/extension.png', 'https://chrome.google.com/webstore/detail/make-donald-drumpf-again/eppfpfolmpkpclmcpgplmfllbnokngbb?hl=en-US')
