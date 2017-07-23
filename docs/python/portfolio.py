@@ -85,7 +85,7 @@ main_content = '''<!DOCTYPE html>
 '''
 
 project_section_odd = '''
-    <div class="flex">
+    <div class="flex" data-aos="fade-right">
         <div class="description">
             <h3>{project_title}</h3>
             <p>{project_description}</p>
@@ -97,7 +97,7 @@ project_section_odd = '''
     </div>
 '''
 project_section_even ='''
-    <div class="flex">
+    <div class="flex" data-aos="fade-left">
             <div class="project-image">
                 <img src="{img_path}" alt="" />
             </div>
