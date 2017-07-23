@@ -13,7 +13,11 @@ any text instances of "Trump" with "Drumpf" and changes any images with descript
 Although a fun side project, it is a good ongoing experience with DOM manipulation and a good candidate for practicing nearal networks
 and deep learning to detect Trump photos instead of relying on image descriptions.'''
 
-bulletin_board = project_object.Project('Bulletin Board App', bulletin_description, 
+weather_description = '''This is my first project working with APIs. The web app fetches the user's geolocation and calls an API to display
+the weather data of that location. The background image also changes (via Flikr API) based on the user's location or entered city query. 
+'''
+
+bulletin_board = project_object.Project('Bulletin Board', bulletin_description, 
                                             'img/bulletin.png', 'https://banhawy.github.io/Bulletin-Board/')
 
 classic_tomatoes = project_object.Project('Classic Tomatoes', classic_tomatoes_description, 
@@ -22,9 +26,10 @@ classic_tomatoes = project_object.Project('Classic Tomatoes', classic_tomatoes_d
 drumpfinator = project_object.Project('Make Donald Drumpf Again', drumpfinator_description, 
                                         'img/extension.png', 'https://chrome.google.com/webstore/detail/make-donald-drumpf-again/eppfpfolmpkpclmcpgplmfllbnokngbb?hl=en-US')
 
+weather_machine = project_object.Project('The Weather Machine', weather_description, 'img/weather.png',
+                                    'https://banhawy.github.io/LocalWeather')
 
 
-
-portfolio_projects = [ bulletin_board, classic_tomatoes, drumpfinator ]
+portfolio_projects = [ bulletin_board, classic_tomatoes, drumpfinator, weather_machine ]
 
 portfolio.open_portfolio(portfolio_projects)

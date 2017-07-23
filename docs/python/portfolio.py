@@ -1,8 +1,7 @@
 import os
 import re
 
-main_content = '''
-    <!DOCTYPE html>
+main_content = '''<!DOCTYPE html>
     <html lang="en">
 
     <head>
