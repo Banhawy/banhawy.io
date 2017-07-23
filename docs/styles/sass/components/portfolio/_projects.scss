@@ -1,19 +1,38 @@
+$image-height: 1034px;
+$stacked-height: 950px;
 .projects {
-    .container {
-        // padding: 0;
-        @media screen and (max-width: 1007px) {
-            .row {
-                margin: 0;
-            }
-            .col-sm-9 {
-                padding: 0;
+    img {
+        width: 100%;
+        @media screen and (min-width: $stacked-height) and (max-width: $image-height) {
+            height: 100%;
+        }
+    }
+    .flex {
+        display: flex;
+        @media screen and (max-width: $stacked-height) {
+            flex-wrap: wrap;
+            &:nth-child(odd) {
+                flex-direction: column-reverse;
             }
         }
     }
-    img {
-        width: 100%;
-    }
     .description {
         padding: 3%;
+        flex-grow: 1;
+        width: 100%;
+        @media screen and (max-width: $stacked-height) {
+            text-align: justify;
+            h3,
+            h4 {
+                text-align: center;
+            }
+        }
+    }
+    .project-image {
+        flex-basis: 70%;
+        flex-shrink: 0;
+        @media screen and (max-width: $stacked-height) {
+            flex-basis: 100%;
+        }
     }
 }
