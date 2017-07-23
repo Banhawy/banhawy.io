@@ -8,10 +8,9 @@ classic_tomatoes_description = '''This is a single page web app built entirely w
 and some jQuery and bootstrap. It is easily customizable and can genrate a movie library with trailers and info 
 by just inserting movie title names in a python list. '''
 
-drumpfinator_description = '''This is a chrome extension written in Javascript that automatically detects and replaces
+drumpfinator_description = '''A chrome extension written in Javascript that automatically detects and replaces
 any text instances of "Trump" with "Drumpf" and changes any images with description of Trump into a random image/gif of Obama instead. 
-Although a fun side project, it is a good ongoing experience with DOM manipulation and a good candidate for practicing nearal networks
-and deep learning to detect Trump photos instead of relying on image descriptions.'''
+Will use neural networks and deep learnig for facial recognition in future versions.'''
 
 weather_description = '''This is my first project working with APIs. The web app fetches the user's geolocation and calls an API to display
 the weather data of that location. The background image also changes (via Flikr API) based on the user's location or entered city query. 

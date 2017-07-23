@@ -6075,6 +6075,12 @@ li.active {
     -webkit-filter: hue-rotate(129deg);
     filter: hue-rotate(129deg); }
 
+@media screen and (max-width: 1007px) {
+  .projects .container .row {
+    margin: 0; }
+  .projects .container .col-sm-9 {
+    padding: 0; } }
+
 .projects img {
   width: 100%; }
 
