@@ -6075,17 +6075,37 @@ li.active {
     -webkit-filter: hue-rotate(129deg);
     filter: hue-rotate(129deg); }
 
-@media screen and (max-width: 1007px) {
-  .projects .container .row {
-    margin: 0; }
-  .projects .container .col-sm-9 {
-    padding: 0; } }
-
 .projects img {
   width: 100%; }
+  @media screen and (min-width: 950px) and (max-width: 1034px) {
+    .projects img {
+      height: 100%; } }
+
+.projects .flex {
+  display: flex; }
+  @media screen and (max-width: 950px) {
+    .projects .flex {
+      flex-wrap: wrap; }
+      .projects .flex:nth-child(odd) {
+        flex-direction: column-reverse; } }
 
 .projects .description {
-  padding: 3%; }
+  padding: 3%;
+  flex-grow: 1;
+  width: 100%; }
+  @media screen and (max-width: 950px) {
+    .projects .description {
+      text-align: justify; }
+      .projects .description h3,
+      .projects .description h4 {
+        text-align: center; } }
+
+.projects .project-image {
+  flex-basis: 70%;
+  flex-shrink: 0; }
+  @media screen and (max-width: 950px) {
+    .projects .project-image {
+      flex-basis: 100%; } }
 
 .container {
   width: 100%; }
