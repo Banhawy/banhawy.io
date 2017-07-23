@@ -85,31 +85,27 @@ main_content = '''<!DOCTYPE html>
 '''
 
 project_section_odd = '''
-    <div class="container">
-            <div class="row">
-                <div class="col-sm-3 col-lg-3 description">
-                    <h3>{project_title}</h3>
-                    <p>{project_description}</p>
-                    <a href="{project_url}" target="_blank"><h4>View this project</h4></a>
-                </div>
-                <div class="col-xs-9 col-sm-9 col-lg-9">
-                    <img src="{img_path}" alt="" />
-                </div>
-            </div>
+    <div class="flex">
+        <div class="description">
+            <h3>{project_title}</h3>
+            <p>{project_description}</p>
+            <a href="{project_url}" target="_blank"><h4>View this project</h4></a>
         </div>
+        <div class="project-image">
+             <img src="{img_path}" alt="" />
+        </div>
+    </div>
 '''
 project_section_even ='''
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9 col-lg-9">
+    <div class="flex">
+            <div class="project-image">
                 <img src="{img_path}" alt="" />
             </div>
-            <div class="col-lg-3 description">
+            <div class="description">
                 <h3>{project_title}</h3>
                 <p>{project_description}</p>
                 <a href="{project_url}" target="_blank"><h4>View this project</h4></a>
             </div>
-        </div>
     </div>
 '''
 
