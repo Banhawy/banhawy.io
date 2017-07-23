@@ -15,6 +15,8 @@ Will use neural networks and deep learnig for facial recognition in future versi
 weather_description = '''This is my first project working with APIs. The web app fetches the user's geolocation and calls an API to display
 the weather data of that location. The background image also changes (via Flikr API) based on the user's location or entered city query. 
 '''
+rqg_description = '''This is a a web app that generates random quotes from different world leader. I wrote the JSON API that serves the app
+ myself and fetched it via ajax. The app changes the background and displays a portrait of the leader with a link to his/her wiki page and a tweet button.'''
 
 bulletin_board = project_object.Project('Bulletin Board', bulletin_description, 
                                             'img/bulletin.png', 'https://banhawy.github.io/Bulletin-Board/')
@@ -28,7 +30,8 @@ drumpfinator = project_object.Project('Make Donald Drumpf Again', drumpfinator_d
 weather_machine = project_object.Project('The Weather Machine', weather_description, 'img/weather.png',
                                     'https://banhawy.github.io/LocalWeather')
 
+quote_generator = project_object.Project('Random Quote Generator', rqg_description, 'img/rqg.png', 'https://codepen.io/Banhawy/full/rWZxMv/')
 
-portfolio_projects = [ bulletin_board, classic_tomatoes, drumpfinator, weather_machine ]
+portfolio_projects = [ bulletin_board, classic_tomatoes, drumpfinator, weather_machine, quote_generator ]
 
 portfolio.open_portfolio(portfolio_projects)
