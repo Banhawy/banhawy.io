@@ -1,10 +1,10 @@
 class Project():
     """ This class provides a way of storing project related information"""
-    def __init__(self, title, description, image_path, footer):
+    def __init__(self, title, description, image, link):
         self.title = title
         self.description = description
-        self.image_path = image_path
-        self.footer = footer
+        self.image_path = image
+        self.url = link
 
     def get_title(self):
         return self.title
@@ -15,5 +15,5 @@ class Project():
     def get_image(self):
         return self.image_path
     
-    def get_footer(self):
-        return self.footer
+    def set_url(self, link):
+        self.url=link
