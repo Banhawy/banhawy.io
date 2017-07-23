@@ -11,8 +11,8 @@ main_content = '''<!DOCTYPE html>
         <!-- Bootstrap 3 -->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="styles/css/external/aos.css">
         <link rel="stylesheet" href="styles/css/styles.css">
-        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
         <!--Font Awesome-->
         <script src="https://use.fontawesome.com/80270d8f99.js"></script>
 
@@ -78,6 +78,7 @@ main_content = '''<!DOCTYPE html>
             </div>
         </footer>
         <script src="js/jquery.min.js"></script>
+        <script src="js/aos.js"></script>
         <script src="js/index.js"></script>
     </body>
 
