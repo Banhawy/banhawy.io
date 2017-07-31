@@ -18,6 +18,9 @@ the weather data of that location. The background image also changes (via Flikr 
 rqg_description = '''This is a a web app that generates random quotes from different world leader. I wrote the JSON API that serves the app
  myself and fetched it via ajax. The app changes the background and displays a portrait of the leader with a link to his/her wiki page and a tweet button.'''
 
+wiki_description = '''A SPA that takes user input and queries Wikipedia for a given term. Results are formatted and listed after asynchronous call is made. 
+                     This project is built with React, JSX, and Material-UI. '''
+
 bulletin_board = project_object.Project('Bulletin Board', bulletin_description, 
                                             'img/bulletin.png', 'https://banhawy.github.io/Bulletin-Board/')
 
@@ -32,6 +35,8 @@ weather_machine = project_object.Project('The Weather Machine', weather_descript
 
 quote_generator = project_object.Project('Random Quote Generator', rqg_description, 'img/rqg.png', 'https://codepen.io/Banhawy/full/rWZxMv/')
 
-portfolio_projects = [ bulletin_board, classic_tomatoes, drumpfinator, weather_machine, quote_generator ]
+wiki_viewer = project_object.Project('Wikipedia Viewer', wiki_description, 'img/wiki.png', 'https://banhawy.github.io/Wikipedia-Viewer/')
+
+portfolio_projects = [ bulletin_board, classic_tomatoes, drumpfinator, weather_machine, quote_generator, wiki_viewer ]
 
 portfolio.open_portfolio(portfolio_projects)
