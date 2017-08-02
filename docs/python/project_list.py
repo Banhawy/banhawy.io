@@ -37,6 +37,6 @@ quote_generator = project_object.Project('Random Quote Generator', rqg_descripti
 
 wiki_viewer = project_object.Project('Wikipedia Viewer', wiki_description, 'img/wiki.png', 'https://banhawy.github.io/Wikipedia-Viewer/')
 
-portfolio_projects = [ bulletin_board, classic_tomatoes, drumpfinator, weather_machine, quote_generator, wiki_viewer ]
+portfolio_projects = [ wiki_viewer, bulletin_board, classic_tomatoes, drumpfinator, weather_machine, quote_generator ]
 
 portfolio.open_portfolio(portfolio_projects)
