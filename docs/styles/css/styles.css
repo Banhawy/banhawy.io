@@ -6118,6 +6118,8 @@ li.active {
     width: 100%; }
     #hero .container .row {
       margin: 3% 2%; }
+      #hero .container .row .col-xs-7 {
+        margin-top: 2%; }
   #hero h1,
   #hero h2 {
     color: white; }
@@ -6125,7 +6127,8 @@ li.active {
     border-radius: 200px 200px 200px 200px;
     -moz-border-radius: 200px 200px 200px 200px;
     -webkit-border-radius: 200px 200px 200px 200px;
-    border: 0px solid #000000; }
+    border: 0px solid #000000;
+    width: 50%; }
   @media screen and (max-width: 400px) {
     #hero .col-xs-7 {
       width: 100%; }
