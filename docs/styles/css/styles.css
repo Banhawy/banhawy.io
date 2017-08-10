@@ -6120,6 +6120,9 @@ li.active {
       margin: 3% 2%; }
       #hero .container .row .col-xs-7 {
         margin-top: 2%; }
+        @media screen and (min-width: 1025px) {
+          #hero .container .row .col-xs-7 {
+            margin-top: 4%; } }
   #hero h1,
   #hero h2 {
     color: white; }
@@ -6129,11 +6132,13 @@ li.active {
     -webkit-border-radius: 200px 200px 200px 200px;
     border: 0px solid #000000;
     width: 50%; }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 750px) {
     #hero .col-xs-7 {
       width: 100%; }
     #hero .col-xs-5 {
-      width: 100%; } }
+      width: 100%; }
+      #hero .col-xs-5 img {
+        width: 40%; } }
 
 #description {
   -webkit-box-shadow: inset 0px 9px 7px 0px rgba(57, 65, 69, 0.81);
