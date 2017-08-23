@@ -1,20 +1,23 @@
 {
-    "name": "online-resume",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Adham El Banhawy",
-    "license": "MIT",
-    "devDependencies": {
-        "browser-sync": "^2.7.12",
-        "gulp": "^3.9.0",
-        "gulp-cssnano": "^2.1.0",
-        "gulp-sass": "^3.0.0",
-        "gulp-uglify": "^1.2.0",
-        "gulp-useref": "^3.0.4",
-        "run-sequence": "^1.1.2"
-    }
+  "name": "online-resume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adham El Banhawy",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.7.12",
+    "gulp": "^3.9.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-useref": "^3.0.4",
+    "run-sequence": "^1.1.2"
+  },
+  "dependencies": {
+    "marked": "^0.3.6"
+  }
 }
