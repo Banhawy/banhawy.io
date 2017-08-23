@@ -96,8 +96,9 @@ main_content= ''' <title>{blog_title}</title>
         <script src="js/jquery.min.js"></script>
         <script src="js/aos.js"></script>
         <script src="js/index.js"></script>
+        //'```js\n console.log("hello"); \n```'
         <script>
-            document.getElementById('content').innerHTML=marked('{blog_post}');
+            document.getElementById('content').innerHTML=marked(`{blog_post}`);
         </script>
     </body>
 
