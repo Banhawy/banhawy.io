@@ -45,38 +45,13 @@ main_content = '''<!DOCTYPE html>
         <section id="blog" class="blogposts">
         <div class="button-group filter-button-group">
             <button data-filter="*">show all</button>
-            <button data-filter=".metal">metal</button>
-            <button data-filter=".transition">transition</button>
-        </div>
-            <div class="grid"'>
-                <div class="grid-item">
-                    <div class="card" style="width: 200px">
-                        <img src="img/self.png" alt="Avatar" style="width:100%">
-                        <div class="container">
-                            <h4><b>John Doe</b></h4> 
-                            <p>Architect & Engineer</p> 
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item metal">
-                    <div class="card" style="width: 200px">
-                        <img src="img/self.png" alt="Avatar" style="width:100%">
-                        <div class="container">
-                            <h4><b>John Doe</b></h4> 
-                            <p>Architect & Engineer</p> 
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <div class="card transition" style="width: 200px">
-                        <img src="img/self.png" alt="Avatar" style="width:100%">
-                        <div class="container">
-                            <h4><b>John Doe</b></h4> 
-                            <p>Architect & Engineer</p> 
-                        </div>
-                    </div>
-                </div>
+            <button data-filter=".general">General</button>
+            <button data-filter=".javascript">Javascript</button>
+            <button data-filter=".python">Python</button>
             
+        </div>
+            <div class="grid">
+                    {cards}
             </div>
         </section>
         <footer>
@@ -122,8 +97,32 @@ main_content = '''<!DOCTYPE html>
     </html>
 '''
 
-def open_blog(title):
-    html_file = title + '.html'
+card_template = '''<div class="grid-item {topic}">
+                        <div class="card" style="width: 200px">
+                            <img src="img/self.png" alt="Avatar" style="width:100%">
+                            <div class="container">
+                                <h4><b>{title}</b></h4> 
+                                <p>{description}</p> 
+                            </div>
+                        </div>
+                    </div>
+'''
+
+def add_cards(blogs):
+    content = ''
+    for blog in blogs:
+        content += card_template.format(
+            topic= blog.topic,
+            title= blog.title,
+            description= blog.description
+        )
+    return content
+
+def open_blog(blogs):
+    html_file = 'blog.html'
     output_file = open(html_file, 'w')
-    output_file.write(main_content)
+    rendered_blogs = main_content.format(
+        cards=add_cards(blogs)
+    )
+    output_file.write(rendered_blogs)
     output_file.close()
