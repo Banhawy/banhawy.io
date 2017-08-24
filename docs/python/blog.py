@@ -11,7 +11,6 @@ main_content = '''<!DOCTYPE html>
         <!-- Bootstrap 3 -->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="styles/css/external/aos.css">
         <link rel="stylesheet" href="styles/css/styles.css">
         <!--Font Awesome-->
         <script src="https://use.fontawesome.com/80270d8f99.js"></script>
@@ -25,7 +24,8 @@ main_content = '''<!DOCTYPE html>
                 <ul class="nav-links">
                     <li><a href="index.html">ABOUT</a></li>
                     <li><a href="resume.html">RESUME</a></li>
-                    <li class="active"><a href="#">PORTFOLIO</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li class="active"><a href="#">Blog</a></li>
                 </ul>
                 <div class="menu" onclick="openNav()">
                     <div class="bar"></div>
@@ -38,11 +38,46 @@ main_content = '''<!DOCTYPE html>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="index.html">ABOUT</a>
             <a href="resume.html">RESUME</a>
-            <a href="#">PORTFOLIO</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="#">Blog</a>
         </div>
 
-        <section id="main" class="blogposts">
-            {blog_posts}
+        <section id="blog" class="blogposts">
+        <div class="button-group filter-button-group">
+            <button data-filter="*">show all</button>
+            <button data-filter=".metal">metal</button>
+            <button data-filter=".transition">transition</button>
+        </div>
+            <div class="grid"'>
+                <div class="grid-item">
+                    <div class="card" style="width: 200px">
+                        <img src="img/self.png" alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4><b>John Doe</b></h4> 
+                            <p>Architect & Engineer</p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item metal">
+                    <div class="card" style="width: 200px">
+                        <img src="img/self.png" alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4><b>John Doe</b></h4> 
+                            <p>Architect & Engineer</p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card transition" style="width: 200px">
+                        <img src="img/self.png" alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4><b>John Doe</b></h4> 
+                            <p>Architect & Engineer</p> 
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
         </section>
         <footer>
             <div class="container-fluid social-links">
@@ -78,9 +113,17 @@ main_content = '''<!DOCTYPE html>
             </div>
         </footer>
         <script src="js/jquery.min.js"></script>
-        <script src="js/aos.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/filter.js"></script>
+        
     </body>
 
     </html>
 '''
+
+def open_blog(title):
+    html_file = title + '.html'
+    output_file = open(html_file, 'w')
+    output_file.write(main_content)
+    output_file.close()
