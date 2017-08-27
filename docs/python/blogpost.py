@@ -42,7 +42,7 @@ main_content= ''' <title>{blog_title}</title>
                     <li><a href="../index.html">ABOUT</a></li>
                     <li><a href="../resume.html">RESUME</a></li>
                     <li><a href="../portfolio.html">PORTFOLIO</a></li>
-                    <li class="active"><a href="#">BLOG</a></li>
+                    <li class="active"><a href="../blog.html">BLOG</a></li>
                 </ul>
                 <div class="menu" onclick="openNav()">
                     <div class="bar"></div>
@@ -56,9 +56,8 @@ main_content= ''' <title>{blog_title}</title>
             <a href="../index.html">ABOUT</a>
             <a href="../resume.html">RESUME</a>
             <a href="../portfolio.html">PORTFOLIO</a>
-            <a href="#">BLOG</a>
+            <a href="../blog.html">BLOG</a>
         </div>
-
         <article id="content" class="markdown-body">
             
         </article>
@@ -95,11 +94,10 @@ main_content= ''' <title>{blog_title}</title>
                 </div>
             </div>
         </footer>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/aos.js"></script>
-        <script src="js/index.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/index.js"></script>
         <script>
-            document.getElementById('content').innerHTML=marked(`{blog_post}`);
+            document.getElementById('content').innerHTML=marked(`<a href="../blog.html">Back to Blog</a><br> \n {blog_post}`);
         </script>
     </body>
 
@@ -108,7 +106,8 @@ main_content= ''' <title>{blog_title}</title>
 
 def open_blog(title, content):
     html_file = title + '.html'
-    output_file = open(html_file, 'w')
+    path = os.path.join(os.path.dirname(__file__), '..', 'blog', html_file)
+    output_file = open(path, 'w')
     rendered_blog = main_content.format(
         blog_title=title,
         blog_post=content
