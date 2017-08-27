@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 var typed = new Typed('.monitor', {
     strings: ["a Web Developer.", "a Blogger.", "a Gamer.", "a technology enthusiast.", "a Software Engineer."],
-    typeSpeed: 65,
+    typeSpeed: 90,
     smartBackspace: true,
     backSpeed: 20,
     backDelay: 2000,
