@@ -97,15 +97,17 @@ main_content = '''<!DOCTYPE html>
     </html>
 '''
 
-card_template = '''<div class="grid-item {topic}">
-                        <div class="card" style="width: 200px">
-                            <img src="img/self.png" alt="Avatar" style="width:100%">
-                            <div class="container">
-                                <h4><b>{title}</b></h4> 
-                                <p>{description}</p> 
+card_template = '''<a href="{url}">
+                        <div class="grid-item {topic}">
+                            <div class="card" style="width: 200px">
+                                <img src="{img}" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>{title}</b></h4> 
+                                    <p>{description}</p> 
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 '''
 
 def add_cards(blogs):
@@ -114,13 +116,16 @@ def add_cards(blogs):
         content += card_template.format(
             topic= blog.topic,
             title= blog.title,
-            description= blog.description
+            description= blog.description,
+            url= blog.url,
+            img=blog.image_path
         )
     return content
 
 def open_blog(blogs):
     html_file = 'blog.html'
-    output_file = open(html_file, 'w')
+    path = os.path.join(os.path.dirname(__file__), '..', html_file)
+    output_file = open(path, 'w')
     rendered_blogs = main_content.format(
         cards=add_cards(blogs)
     )
