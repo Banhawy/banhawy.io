@@ -6052,6 +6052,9 @@ li.active {
   display: flex;
   align-items: stretch;
   flex-wrap: wrap; }
+  @media screen and (max-width: 972px) {
+    .front-page .row svg {
+      margin: 5% 10%; } }
   .front-page .row .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -6060,10 +6063,32 @@ li.active {
     width: 23em; }
     .front-page .row .card:hover {
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+    @media screen and (max-width: 972px) {
+      .front-page .row .card {
+        margin-left: 23%; } }
+    @media screen and (max-width: 490px) {
+      .front-page .row .card {
+        margin-left: 12%; } }
   .front-page .row span {
     font-size: 50px;
     color: green;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
+  .front-page .row foreignObject.foreign {
+    x: 195;
+    y: 320;
+    width: 900px;
+    height: 45px; }
+    @media screen and (max-width: 600px) {
+      .front-page .row foreignObject.foreign {
+        x: 55;
+        y: 296;
+        height: 3em; }
+        .front-page .row foreignObject.foreign .mui-btn {
+          overflow: unset; } }
+    .front-page .row foreignObject.foreign .butt {
+      width: 20%;
+      height: 100%;
+      max-height: 300px; }
 
 @media screen and (min-width: 1200px) {
   .front-page .col-lg-7 {
