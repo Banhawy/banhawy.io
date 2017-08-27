@@ -13,6 +13,7 @@
     .row {
         display: flex;
         align-items: stretch;
+        flex-wrap: wrap;
         .card {
             /* Add shadows to create the "card" effect */
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -26,8 +27,10 @@
                 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
             }
         }
-        .twitter-timeline{
-            // align-self: auto;
+        span{
+            font-size: 50px;
+            color: green;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
         }
     }
     .col-lg-7 {
