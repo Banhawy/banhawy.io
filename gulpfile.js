@@ -1,10 +1,12 @@
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
 var useref = require('gulp-useref');
 var cssnano = require('gulp-cssnano');
 var runSequence = require('run-sequence');
+var htmlmin = require('gulp-htmlmin');
 
 // Basic Gulp task syntax
 gulp.task('hello', function() {
@@ -47,10 +49,17 @@ gulp.task('useref', function() {
 
     return gulp.src('docs/*.html')
         .pipe(useref())
-        .pipe(gulpIf('*.js', uglify()))
-        .pipe(gulpIf('*.css', cssnano()))
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', cssnano()))
         .pipe(gulp.dest('dist'));
 });
+
+//Minify html
+gulp.task('minify', function() {
+    return gulp.src('docs/html/*.html')
+      .pipe(htmlmin({collapseWhitespace: true}))
+      .pipe(gulp.dest('docs/dist'));
+  });
 
 // Build Sequences
 // ---------------
@@ -63,7 +72,7 @@ gulp.task('default', function(callback) {
 
 gulp.task('build', function(callback) {
     runSequence(
-        ['sass', 'useref'],
+        ['sass', 'useref', 'minify'],
         callback
     )
 })
