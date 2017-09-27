@@ -56,7 +56,7 @@ gulp.task('useref', function() {
 
 //Minify html
 gulp.task('minify', function() {
-    return gulp.src('docs/html/*.html')
+    return gulp.src('docs/**/*.html')
       .pipe(htmlmin({collapseWhitespace: true}))
       .pipe(gulp.dest('docs/dist'));
   });
