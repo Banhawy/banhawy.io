@@ -14,6 +14,9 @@ main_content = '''<!DOCTYPE html>
         <link rel="stylesheet" href="styles/css/styles.css">
         <!--Font Awesome-->
         <script src="https://use.fontawesome.com/80270d8f99.js"></script>
+        <!--Material UI-->
+        <link href="//cdn.muicss.com/mui-0.9.22/css/mui.min.css" rel="stylesheet" type="text/css" />
+        <script src="//cdn.muicss.com/mui-0.9.22/js/mui.min.js"></script>
 
         <title>Adham's Blog</title>
     </head>
