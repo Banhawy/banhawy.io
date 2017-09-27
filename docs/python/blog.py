@@ -47,10 +47,10 @@ main_content = '''<!DOCTYPE html>
 
         <section id="blog" class="blogposts">
         <div class="button-group filter-button-group">
-            <button data-filter="*">show all</button>
-            <button data-filter=".general">General</button>
-            <button data-filter=".javascript">Javascript</button>
-            <button data-filter=".python">Python</button>
+            <button class="mui-btn mui-btn--raised" data-filter="*">show all</button>
+            <button class="mui-btn mui-btn--raised" data-filter=".general">General</button>
+            <button class="mui-btn mui-btn--raised" data-filter=".javascript">Javascript</button>
+            <button class="mui-btn mui-btn--raised" data-filter=".python">Python</button>
             
         </div>
             <div class="grid">
