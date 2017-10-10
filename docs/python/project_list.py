@@ -21,6 +21,9 @@ rqg_description = '''This is a a web app that generates random quotes from diffe
 wiki_description = '''A SPA that takes user input and queries Wikipedia for a given term. Results are formatted and listed after asynchronous call is made. 
                      This project is built with React, JSX, and Material-UI. '''
 
+timestamp_description = '''A simple web API that take string and unix dates and returns their proper formatting in DateString and Unix in JSON format. This project is built
+with Node.js and Express. '''
+
 bulletin_board = project_object.Project('Bulletin Board', bulletin_description, 
                                             'img/bulletin.png', 'https://banhawy.github.io/Bulletin-Board/')
 
@@ -37,6 +40,8 @@ quote_generator = project_object.Project('Random Quote Generator', rqg_descripti
 
 wiki_viewer = project_object.Project('Wikipedia Viewer', wiki_description, 'img/wiki.png', 'https://banhawy.github.io/Wikipedia-Viewer/')
 
-portfolio_projects = [ wiki_viewer, bulletin_board, classic_tomatoes, drumpfinator, weather_machine, quote_generator ]
+timestamp = project_object.Project('TimeStamp Microservice', timestamp_description, 'img/timestamp.png', 'https://adham-timestamp-ms.herokuapp.com/')
+
+portfolio_projects = [ timestamp, wiki_viewer, bulletin_board, classic_tomatoes, drumpfinator, weather_machine, quote_generator ]
 
 portfolio.open_portfolio(portfolio_projects)
