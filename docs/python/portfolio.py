@@ -26,6 +26,7 @@ main_content = '''<!DOCTYPE html>
                     <li><a href="index.html">ABOUT</a></li>
                     <li><a href="resume.html">RESUME</a></li>
                     <li class="active"><a href="#">PORTFOLIO</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
                 </ul>
                 <div class="menu" onclick="openNav()">
                     <div class="bar"></div>
@@ -39,6 +40,7 @@ main_content = '''<!DOCTYPE html>
             <a href="index.html">ABOUT</a>
             <a href="resume.html">RESUME</a>
             <a href="#">PORTFOLIO</a>
+            <a href="blog.html">BLOG</a>
         </div>
 
         <section id="main" class="projects">
