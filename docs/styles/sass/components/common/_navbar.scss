@@ -1,4 +1,4 @@
-$small: 334px;
+$small: 398px;
 @media screen and (max-width: $small) {
     nav {
         li {
@@ -45,7 +45,7 @@ nav {
         }
         .bar {
             width: 35px;
-            height: 5px;
+            height: 4px;
             background-color: black;
             margin: 6px 0;
         }
