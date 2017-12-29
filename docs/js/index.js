@@ -7,10 +7,18 @@ function openNav() {
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
+    try {
+        document.getElementById("main").style.marginLeft = "0";
+    } catch (TypeError) {
+        document.getElementById("blog").style.marginLeft = "0";
+    }
     document.body.style.backgroundColor = "white";
 }
 
-AOS.init({
-    duration: 1200,
-})
+try {
+    AOS.init({
+        duration: 1200,
+    })
+} catch (ReferenceError) {
+    
+}
