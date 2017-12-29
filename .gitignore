@@ -4,3 +4,6 @@ __pycache__
 .DS_Store
 package-lock.json
 docs/dist/
+amazon/
+dist/
+*.zip

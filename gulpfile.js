@@ -2,11 +2,13 @@ var gulp = require('gulp');
 var gulpif = require('gulp-if');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
-var uglify = require('gulp-uglify');
-var useref = require('gulp-useref');
+var minifyjs = require('gulp-js-minify');
 var cssnano = require('gulp-cssnano');
 var runSequence = require('run-sequence');
 var htmlmin = require('gulp-htmlmin');
+var imageop = require('gulp-image-optimization');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
 
 // Basic Gulp task syntax
 gulp.task('hello', function() {
@@ -45,21 +47,47 @@ gulp.task('watch', function() {
 // ------------------
 
 // Optimizing CSS and JavaScript 
-gulp.task('useref', function() {
+// gulp.task('js-minify', function() {
+//     return gulp.src('docs/js/*.js')
+//     .pipe(minifyjs())
+//     .pipe(gulp.dest('dist/js/'));
+// });
 
-    return gulp.src('docs/*.html')
-        .pipe(useref())
-        .pipe(gulpif('*.js', uglify()))
-        .pipe(gulpif('*.css', cssnano()))
-        .pipe(gulp.dest('dist'));
+gulp.task('js-minify', function (cb) {
+    pump([
+          gulp.src('docs/js/*.js'),
+          uglify(),
+          gulp.dest('dist/js/')
+      ],
+      cb
+    );
+  });
+
+gulp.task('css-minify', function() {
+    return gulp.src('docs/styles/css/**/*.css')
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css/'));
+});
+
+gulp.task('img-minify', function(cb) {
+    gulp.src('docs/**/*.+(png|jpg|gif|jpeg)').pipe(imageop({
+        optimizationLevel: 5,
+        progressive: true,
+        interlaced: true
+    })).pipe(gulp.dest('dist/img')).on('end', cb).on('error', cb);
 });
 
 //Minify html
 gulp.task('minify', function() {
     return gulp.src('docs/**/*.html')
-      .pipe(htmlmin({collapseWhitespace: true}))
-      .pipe(gulp.dest('docs/dist'));
+      .pipe(htmlmin({collapseWhitespace: true}));
   });
+
+// Copy files for prod
+gulp.task('amazon', function(){
+    return gulp.src(['docs/**/*.html', '!docs/**/_*/', '!docs/**/_*/**/*', 'dist/**/*.css', 'dist/**/*.js', 'dist/**/*.png', 'docs/*fonts/**'])
+    .pipe(gulp.dest('amazon'))
+});
 
 // Build Sequences
 // ---------------
@@ -72,7 +100,7 @@ gulp.task('default', function(callback) {
 
 gulp.task('build', function(callback) {
     runSequence(
-        ['sass', 'useref', 'minify'],
+        ['sass', 'js-minify', 'minify'],
         callback
     )
 })

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="styles/css/external/aos.css">
+        <link rel="stylesheet" href="styles/css/styles.css">
+        <!--Font Awesome-->
+        <script src="https://use.fontawesome.com/80270d8f99.js"></script>
+
+        <title>Adham's Resume</title>
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">ABOUT</a></li>
+                    <li><a href="resume.html">RESUME</a></li>
+                    <li class="active"><a href="#">PORTFOLIO</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <div class="menu" onclick="openNav()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">ABOUT</a>
+            <a href="resume.html">RESUME</a>
+            <a href="#">PORTFOLIO</a>
+            <a href="blog.html">Blog</a>
+        </div>
+
+        <section id="main" class="projects">
+            
+    <div class="flex" data-aos="fade-right">
+        <div class="description">
+            <h3>Wikipedia Viewer</h3>
+            <p>A SPA that takes user input and queries Wikipedia for a given term. Results are formatted and listed after asynchronous call is made. 
+                     This project is built with React, JSX, and Material-UI. </p>
+            <a href="https://banhawy.github.io/Wikipedia-Viewer/" target="_blank"><h4>View this project</h4></a>
+        </div>
+        <div class="project-image">
+             <img src="img/wiki.png" alt="" />
+        </div>
+    </div>
+
+    <div class="flex" data-aos="fade-left">
+            <div class="project-image">
+                <img src="img/bulletin.png" alt="" />
+            </div>
+            <div class="description">
+                <h3>Bulletin Board</h3>
+                <p>This is a virtual bulletin board one-page application built with React. 
+It's my first project learning React. Used React components, ES6 syntax, and React production environment.</p>
+                <a href="https://banhawy.github.io/Bulletin-Board/" target="_blank"><h4>View this project</h4></a>
+            </div>
+    </div>
+
+    <div class="flex" data-aos="fade-right">
+        <div class="description">
+            <h3>Classic Tomatoes</h3>
+            <p>This is a single page web app built entirely with python code. Used movie APIs
+and some jQuery and bootstrap. It is easily customizable and can genrate a movie library with trailers and info 
+by just inserting movie title names in a python list. </p>
+            <a href="https://banhawy.github.io/Classic_Tomatoes/" target="_blank"><h4>View this project</h4></a>
+        </div>
+        <div class="project-image">
+             <img src="img/classicT.png" alt="" />
+        </div>
+    </div>
+
+    <div class="flex" data-aos="fade-left">
+            <div class="project-image">
+                <img src="img/extension.png" alt="" />
+            </div>
+            <div class="description">
+                <h3>Make Donald Drumpf Again</h3>
+                <p>A chrome extension written in Javascript that automatically detects and replaces
+any text instances of "Trump" with "Drumpf" and changes any images with description of Trump into a random image/gif of Obama instead. 
+Will use neural networks and deep learnig for facial recognition in future versions.</p>
+                <a href="https://chrome.google.com/webstore/detail/make-donald-drumpf-again/eppfpfolmpkpclmcpgplmfllbnokngbb?hl=en-US" target="_blank"><h4>View this project</h4></a>
+            </div>
+    </div>
+
+    <div class="flex" data-aos="fade-right">
+        <div class="description">
+            <h3>The Weather Machine</h3>
+            <p>This is my first project working with APIs. The web app fetches the user's geolocation and calls an API to display
+the weather data of that location. The background image also changes (via Flikr API) based on the user's location or entered city query. 
+</p>
+            <a href="https://banhawy.github.io/LocalWeather" target="_blank"><h4>View this project</h4></a>
+        </div>
+        <div class="project-image">
+             <img src="img/weather.png" alt="" />
+        </div>
+    </div>
+
+    <div class="flex" data-aos="fade-left">
+            <div class="project-image">
+                <img src="img/rqg.png" alt="" />
+            </div>
+            <div class="description">
+                <h3>Random Quote Generator</h3>
+                <p>This is a a web app that generates random quotes from different world leader. I wrote the JSON API that serves the app
+ myself and fetched it via ajax. The app changes the background and displays a portrait of the leader with a link to his/her wiki page and a tweet button.</p>
+                <a href="https://codepen.io/Banhawy/full/rWZxMv/" target="_blank"><h4>View this project</h4></a>
+            </div>
+    </div>
+
+        </section>
+        <footer>
+            <div class="container-fluid social-links">
+                <div class="logos">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <a href="https://github.com/Banhawy" target="_blank">
+                                <img src="img/github-logo.png" alt="github link">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="https://www.linkedin.com/in/adham-banhawy/" target="_blank">
+                                <img src="img/linkedin-logo.png" alt="linkdin link">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="https://twitter.com/adham_benhawy" target="_blank">
+                                <img src="img/twitter-logo.png" alt="twitter link">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid footer">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>3131 Sumter Ave N, Crystal, 55427 MN</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p id="email">the.benhawy@ gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+
+    </html>
