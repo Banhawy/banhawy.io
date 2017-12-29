@@ -5914,7 +5914,7 @@
 .ion-xbox:before {
   content: ""; }
 
-@media screen and (max-width: 334px) {
+@media screen and (max-width: 387px) {
   nav li {
     display: block; } }
 
@@ -5933,7 +5933,7 @@ nav .nav-links li {
   position: relative;
   display: inline-block;
   padding: 10px 15px 15px 15px; }
-  @media screen and (max-width: 334px) {
+  @media screen and (max-width: 387px) {
     nav .nav-links li {
       display: none; } }
   nav .nav-links li a {
@@ -5945,7 +5945,7 @@ nav .nav-links li {
 nav .menu {
   float: right;
   display: none; }
-  @media screen and (max-width: 334px) {
+  @media screen and (max-width: 387px) {
     nav .menu {
       display: inline-block;
       margin: 0 3% 1% 0; } }
