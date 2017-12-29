@@ -5914,7 +5914,7 @@
 .ion-xbox:before {
   content: ""; }
 
-@media screen and (max-width: 387px) {
+@media screen and (max-width: 398px) {
   nav li {
     display: block; } }
 
@@ -5933,7 +5933,7 @@ nav .nav-links li {
   position: relative;
   display: inline-block;
   padding: 10px 15px 15px 15px; }
-  @media screen and (max-width: 387px) {
+  @media screen and (max-width: 398px) {
     nav .nav-links li {
       display: none; } }
   nav .nav-links li a {
@@ -5945,7 +5945,7 @@ nav .nav-links li {
 nav .menu {
   float: right;
   display: none; }
-  @media screen and (max-width: 387px) {
+  @media screen and (max-width: 398px) {
     nav .menu {
       display: inline-block;
       margin: 0 3% 1% 0; } }
@@ -6032,7 +6032,9 @@ li.active {
   background-color: #028cd5; }
   .footer .row {
     margin-top: 2%;
-    text-align: center; }
+    text-align: right; }
+    .footer .row .col-xs-6 {
+      float: right; }
   .footer p {
     font-size: smaller;
     overflow: auto;

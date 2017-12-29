@@ -21,7 +21,10 @@
     background-color: $dark-blue;
     .row {
         margin-top: 2%;
-        text-align: center;
+        text-align: right;
+        .col-xs-6 {
+            float: right;
+        }
     }
     p {
         font-size: smaller;
