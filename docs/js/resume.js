@@ -82,3 +82,20 @@ var ReactCircle = Circles.create({
     styleWrapper: true,
     styleText: true
 });
+
+var DevOps = Circles.create({
+    id: 'circles-6',
+    radius: 60,
+    value: 25,
+    maxValue: 100,
+    width: 10,
+    text: function() { return '<h4>DevOps<h4>'; },
+    colors: ['#97d5ec', '#028cd5'],
+    duration: 400,
+    wrpClass: 'circles-wrp',
+    textClass: 'circles-text',
+    valueStrokeClass: 'circles-valueStroke',
+    maxValueStrokeClass: 'circles-maxValueStroke',
+    styleWrapper: true,
+    styleText: true
+});
