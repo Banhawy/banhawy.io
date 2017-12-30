@@ -57,7 +57,7 @@ gulp.task('js-minify', function (cb) {
     pump([
           gulp.src('docs/js/*.js'),
           uglify(),
-          gulp.dest('dist/js/')
+          gulp.dest('amazon/js/')
       ],
       cb
     );
@@ -66,7 +66,7 @@ gulp.task('js-minify', function (cb) {
 gulp.task('css-minify', function() {
     return gulp.src('docs/styles/css/**/*.css')
         .pipe(cssnano())
-        .pipe(gulp.dest('dist/css/'));
+        .pipe(gulp.dest('amazon/css/'));
 });
 
 gulp.task('img-minify', function(cb) {
@@ -80,12 +80,13 @@ gulp.task('img-minify', function(cb) {
 //Minify html
 gulp.task('minify', function() {
     return gulp.src('docs/**/*.html')
-      .pipe(htmlmin({collapseWhitespace: true}));
+      .pipe(htmlmin({collapseWhitespace: true}))
+      .pipe(gulp.dest('amazon'));
   });
 
 // Copy files for prod
 gulp.task('amazon', function(){
-    return gulp.src(['docs/**/*.html', '!docs/**/_*/', '!docs/**/_*/**/*', 'dist/**/*.css', 'dist/**/*.js', 'dist/**/*.png', 'docs/*fonts/**'])
+    return gulp.src(['docs/**/*.html', '!docs/**/_*/', '!docs/**/_*/**/*', 'docs/**/*.css', 'docs/**/*.js', 'dist/**/*.png', 'docs/*fonts/**'])
     .pipe(gulp.dest('amazon'))
 });
 
@@ -100,7 +101,7 @@ gulp.task('default', function(callback) {
 
 gulp.task('build', function(callback) {
     runSequence(
-        ['sass', 'js-minify', 'minify'],
+        ['sass', 'js-minify', 'css-minify', 'minify'],
         callback
     )
 })
