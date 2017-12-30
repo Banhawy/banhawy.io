@@ -51,6 +51,8 @@ main_content = '''<!DOCTYPE html>
             <button class="mui-btn mui-btn--raised" data-filter=".general">General</button>
             <button class="mui-btn mui-btn--raised" data-filter=".javascript">Javascript</button>
             <button class="mui-btn mui-btn--raised" data-filter=".python">Python</button>
+            <button class="mui-btn mui-btn--raised" data-filter=".aws">AWS</button>
+            <button class="mui-btn mui-btn--raised" data-filter=".devops">DevOps</button>
             
         </div>
             <div class="grid">
