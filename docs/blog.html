@@ -1,150 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap 3 -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="styles/css/styles.css">
-    <!--Font Awesome-->
-    <script src="https://use.fontawesome.com/80270d8f99.js"></script>
-    <!--Material UI-->
-    <link href="//cdn.muicss.com/mui-0.9.22/css/mui.min.css" rel="stylesheet" type="text/css">
-    <script src="//cdn.muicss.com/mui-0.9.22/js/mui.min.js"></script>
-    <title>Adham's Blog</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="styles/css/styles.css">
+        <!--Font Awesome-->
+        <script src="https://use.fontawesome.com/80270d8f99.js"></script>
+        <!--Material UI-->
+        <link href="//cdn.muicss.com/mui-0.9.22/css/mui.min.css" rel="stylesheet" type="text/css" />
+        <script src="//cdn.muicss.com/mui-0.9.22/js/mui.min.js"></script>
 
-<body>
-    <!-- NAV BAR -->
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li>
-                    <a href="index.html">ABOUT</a>
-                </li>
-                <li>
-                    <a href="resume.html">RESUME</a>
-                </li>
-                <li>
-                    <a href="portfolio.html">PORTFOLIO</a>
-                </li>
-                <li class="active">
-                    <a href="#">Blog</a>
-                </li>
-            </ul>
-            <div class="menu" onclick="openNav()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+        <title>Adham's Blog</title>
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html">ABOUT</a></li>
+                    <li><a href="resume.html">RESUME</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li class="active"><a href="#">Blog</a></li>
+                </ul>
+                <div class="menu" onclick="openNav()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </div>
+        </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">ABOUT</a>
+            <a href="resume.html">RESUME</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="#">Blog</a>
         </div>
-    </nav>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="index.html">ABOUT</a>
-        <a href="resume.html">RESUME</a>
-        <a href="portfolio.html">PORTFOLIO</a>
-        <a href="#">Blog</a>
-    </div>
-    <section id="blog" class="blogposts">
+
+        <section id="blog" class="blogposts">
         <div class="button-group filter-button-group">
             <button class="mui-btn mui-btn--raised" data-filter="*">show all</button>
             <button class="mui-btn mui-btn--raised" data-filter=".general">General</button>
             <button class="mui-btn mui-btn--raised" data-filter=".javascript">Javascript</button>
             <button class="mui-btn mui-btn--raised" data-filter=".python">Python</button>
+            
         </div>
-        <div class="grid">
-            <a href="blog/My Developer Journey.html">
-                <div class="grid-item general">
-                    <div class="card" style="width: 200px">
-                        <img src="img/self.png" alt="Avatar" style="width:100%">
-                        <div class="container">
-                            <h4>
-                                <b>My Developer Journey</b>
-                            </h4>
-                            <p>A personal story about how I chose to become a developer</p>
+            <div class="grid">
+                    <a href="blog/My Developer Journey.html">
+                        <div class="grid-item general">
+                            <div class="card" style="width: 200px">
+                                <img src="img/self.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>My Developer Journey</b></h4> 
+                                    <p>A personal story about how I chose to become a developer</p> 
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </a>
-            <a href="blog/3 Ways to Create React Components.html">
-                <div class="grid-item javascript">
-                    <div class="card" style="width: 200px">
-                        <img src="img/reactjs.png" alt="Avatar" style="width:100%">
-                        <div class="container">
-                            <h4>
-                                <b>3 Ways to Create React Components</b>
-                            </h4>
-                            <p>A brief indtoduction on how to write components in React</p>
+                    </a>
+<a href="blog/3 Ways to Create React Components.html">
+                        <div class="grid-item javascript">
+                            <div class="card" style="width: 200px">
+                                <img src="img/reactjs.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>3 Ways to Create React Components</b></h4> 
+                                    <p>A brief indtoduction on how to write components in React</p> 
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </a>
-            <a href="blog/Making a Python Web Crawler.html">
-                <div class="grid-item python">
-                    <div class="card" style="width: 200px">
-                        <img src="img/post2-0.png" alt="Avatar" style="width:100%">
-                        <div class="container">
-                            <h4>
-                                <b>Making a Python Web Crawler</b>
-                            </h4>
-                            <p>How I made a Python Web Crawler to automate a boring daily task</p>
+                    </a>
+<a href="blog/Making a Python Web Crawler.html">
+                        <div class="grid-item python">
+                            <div class="card" style="width: 200px">
+                                <img src="img/post2-0.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>Making a Python Web Crawler</b></h4> 
+                                    <p>How I made a Python Web Crawler to automate a boring daily task</p> 
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </a>
-            <a href="blog/Parsing Command Line Arguments in Python.html">
-                <div class="grid-item python">
-                    <div class="card" style="width: 200px">
-                        <img src="img/post5.png" alt="Avatar" style="width:100%">
-                        <div class="container">
-                            <h4>
-                                <b>Parsing Command Line Arguments in Python</b>
-                            </h4>
-                            <p>Using python to read input and flags from the command line</p>
+                    </a>
+<a href="blog/Parsing Command Line Arguments in Python.html">
+                        <div class="grid-item python">
+                            <div class="card" style="width: 200px">
+                                <img src="img/post5.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>Parsing Command Line Arguments in Python</b></h4> 
+                                    <p>Using python to read input and flags from the command line</p> 
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-    <footer>
-        <div class="container-fluid social-links">
-            <div class="logos">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <a href="https://github.com/Banhawy" target="_blank">
-                            <img src="img/github-logo.png" alt="github link">
-                        </a>
-                    </div>
-                    <div class="col-xs-4">
-                        <a href="https://www.linkedin.com/in/adham-banhawy/" target="_blank">
-                            <img src="img/linkedin-logo.png" alt="linkdin link">
-                        </a>
-                    </div>
-                    <div class="col-xs-4">
-                        <a href="https://twitter.com/adham_benhawy" target="_blank">
-                            <img src="img/twitter-logo.png" alt="twitter link">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid footer">
-            <div class="row">
-                <div class="col-xs-6">
-                    <p id="email">the.benhawy@ gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/filter.js"></script>
-</body>
+                    </a>
+<a href="blog/Switching to HTTPS for Sites Hosted on AWS.html">
+                        <div class="grid-item AWS">
+                            <div class="card" style="width: 200px">
+                                <img src="img/post6.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>Switching to HTTPS for Sites Hosted on AWS</b></h4> 
+                                    <p>How to register SSL Certificate on AWS</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-</html>
+            </div>
+        </section>
+        <footer>
+            <div class="container-fluid social-links">
+                <div class="logos">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <a href="https://github.com/Banhawy" target="_blank">
+                                <img src="img/github-logo.png" alt="github link">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="https://www.linkedin.com/in/adham-banhawy/" target="_blank">
+                                <img src="img/linkedin-logo.png" alt="linkdin link">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="https://twitter.com/adham_benhawy" target="_blank">
+                                <img src="img/twitter-logo.png" alt="twitter link">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid footer">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>3131 Sumter Ave N, Crystal, 55427 MN</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p id="email">the.benhawy@ gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/isotope.min.js"></script>
+        <script src="js/filter.js"></script>
+        
+    </body>
+
+    </html>
