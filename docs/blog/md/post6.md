@@ -14,7 +14,7 @@ There are many ways you can obtain an SSL certificate. In this post, I will only
 
 ### Step 1:  Check your Current Certificates 
  To begin with, check what certificates you already have. Go to the [AWS CloudFront Manager](https://console.aws.amazon.com/cloudfront/home) and go to the *Distributions* page and click on your site's ID. Next, make sure you're on the *General* tab and click **Edit**. This will show you your website's distribution settings. By default you should see that your SSL Certificate is set to the *Default CloudFront Certificate*. 
- 
+
  ![Check Certificate](../img/aws-1.png) 
 
  ### Step 2: Request a Certificate with ACM
@@ -23,7 +23,8 @@ There are many ways you can obtain an SSL certificate. In this post, I will only
 
  ![Request Domain Name](../img/aws-2.png)
 
- Add your domain name on the first screen and click Next. You have the option to use an asterix (*) as a wild card before your domain name to secure other sites on your domain.
+ Add your domain name on the first screen and click Next. You have the option to use an asterix (\\*) as a wild card before your domain name to secure other sites on your domain.
+ If you're going with the wildcard option, make sure you add **both** your base domain name (*example.com*) and the wildcard format (\\*.example.com).
 
 
  ![Request Domain Name](../img/aws-3.png)
