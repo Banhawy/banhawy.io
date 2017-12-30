@@ -9,6 +9,8 @@ var htmlmin = require('gulp-htmlmin');
 var imageop = require('gulp-image-optimization');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
+var debug = require('gulp-debug');
+var imagemin = require('gulp-imagemin');
 
 // Basic Gulp task syntax
 gulp.task('hello', function() {
@@ -66,7 +68,7 @@ gulp.task('js-minify', function (cb) {
 gulp.task('css-minify', function() {
     return gulp.src('docs/styles/css/**/*.css')
         .pipe(cssnano())
-        .pipe(gulp.dest('amazon/css/'));
+        .pipe(gulp.dest('amazon/styles/css'));
 });
 
 gulp.task('img-minify', function(cb) {
@@ -86,8 +88,16 @@ gulp.task('minify', function() {
 
 // Copy files for prod
 gulp.task('amazon', function(){
-    return gulp.src(['docs/**/*.html', '!docs/**/_*/', '!docs/**/_*/**/*', 'docs/**/*.css', 'docs/**/*.js', 'dist/**/*.png', 'docs/*fonts/**'])
+    return gulp.src(['docs/**/*.html', '!docs/**/_*/', '!docs/**/_*/**/*', 'docs/**/*.css', 'docs/**/*.js', 'docs/*fonts/**'])
+    .pipe(debug({title: 'a7a: '}))
     .pipe(gulp.dest('amazon'))
+});
+
+// Optimize and copy images
+gulp.task('imgmin', function(){
+	gulp.src('docs/img/*')
+		.pipe(imagemin())
+		.pipe(gulp.dest('amazon/img'))
 });
 
 // Build Sequences
@@ -101,7 +111,7 @@ gulp.task('default', function(callback) {
 
 gulp.task('build', function(callback) {
     runSequence(
-        ['sass', 'js-minify', 'css-minify', 'minify'],
+        ['sass', 'js-minify', 'css-minify', 'minify', 'imgmin'],
         callback
     )
 })
