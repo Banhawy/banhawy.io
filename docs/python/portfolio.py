@@ -8,13 +8,14 @@ main_content = '''<!DOCTYPE html>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Adham El Banhawy">
+        <meta name="description" content="Adham's Online Portfolio of projects updated and maintained regulary.">
+        <meta name="keywords" content="Adham El Banhawy, Adham Elbanhawy, Adham Elbenhawy, Adham, el banhawy, el benhawy, elbanhawy, elbenhawy">
         <!-- Bootstrap 3 -->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="styles/css/external/aos.css">
         <link rel="stylesheet" href="styles/css/styles.css">
-        <!--Font Awesome-->
-        <script src="https://use.fontawesome.com/80270d8f99.js"></script>
 
         <title>Adham's Resume</title>
     </head>
@@ -79,6 +80,7 @@ main_content = '''<!DOCTYPE html>
                 </div>
             </div>
         </footer>
+        <script src="https://use.fontawesome.com/80270d8f99.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/aos.js"></script>
         <script src="js/index.js"></script>

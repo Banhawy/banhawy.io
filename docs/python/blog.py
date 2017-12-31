@@ -8,15 +8,15 @@ main_content = '''<!DOCTYPE html>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Adham El Banhawy">
+        <meta name="description" content="Blog page containing technical posts and guides">
+        <meta name="keywords" content="Adham El Banhawy, Adham Elbanhawy, Adham Elbenhawy, Adham, el banhawy, el benhawy, elbanhawy, elbenhawy">
         <!-- Bootstrap 3 -->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="styles/css/styles.css">
-        <!--Font Awesome-->
-        <script src="https://use.fontawesome.com/80270d8f99.js"></script>
         <!--Material UI-->
         <link href="//cdn.muicss.com/mui-0.9.22/css/mui.min.css" rel="stylesheet" type="text/css" />
-        <script src="//cdn.muicss.com/mui-0.9.22/js/mui.min.js"></script>
 
         <title>Adham's Blog</title>
     </head>
@@ -92,6 +92,8 @@ main_content = '''<!DOCTYPE html>
                 </div>
             </div>
         </footer>
+        <script src="https://use.fontawesome.com/80270d8f99.js"></script>
+        <script src="//cdn.muicss.com/mui-0.9.22/js/mui.min.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/index.js"></script>
         <script src="js/isotope.min.js"></script>

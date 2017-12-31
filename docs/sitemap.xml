@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://elbanhawy.com/</loc>
+  <lastmod>2017-12-30T19:37:26+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://elbanhawy.com/resume.html</loc>
+  <lastmod>2017-12-30T19:37:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elbanhawy.com/portfolio.html</loc>
+  <lastmod>2017-12-30T19:37:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elbanhawy.com/blog.html</loc>
+  <lastmod>2017-12-30T19:37:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elbanhawy.com/index.html</loc>
+  <lastmod>2017-12-30T19:37:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://elbanhawy.com/blog/My%20Developer%20Journey.html</loc>
+  <lastmod>2017-12-30T19:37:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://elbanhawy.com/blog/3%20Ways%20to%20Create%20React%20Components.html</loc>
+  <lastmod>2017-12-30T19:37:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://elbanhawy.com/blog/Making%20a%20Python%20Web%20Crawler.html</loc>
+  <lastmod>2017-12-30T19:37:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://elbanhawy.com/blog/Parsing%20Command%20Line%20Arguments%20in%20Python.html</loc>
+  <lastmod>2017-12-30T19:37:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://elbanhawy.com/blog/Switching%20to%20HTTPS%20for%20Sites%20Hosted%20on%20AWS.html</loc>
+  <lastmod>2017-12-30T19:37:22+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+</urlset>

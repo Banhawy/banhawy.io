@@ -1,4 +1,22 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><!-- Bootstrap 3 --><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css"><link rel="stylesheet" href="../styles/css/external/github-markdown.css"><link rel="stylesheet" href="../styles/css/styles.css"><!--Font Awesome--><script src="https://use.fontawesome.com/80270d8f99.js"></script><script src="../js/marked.js"></script><style>.markdown-body {
+ 
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta description="" content="A brief indtoduction on how to write components in React">
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../styles/css/external/github-markdown.css">
+        <link rel="stylesheet" href="../styles/css/styles.css">
+        <!--Font Awesome-->
+        <script src="https://use.fontawesome.com/80270d8f99.js"></script>
+        <script src="../js/marked.js"></script>
+        <style>
+            .markdown-body {
                 box-sizing: border-box;
                 min-width: 200px;
                 max-width: 980px;
@@ -10,5 +28,76 @@
                 .markdown-body {
                     padding: 15px;
                 }
-            }</style><title>3 Ways to Create React Components</title></head><body><!-- NAV BAR --><nav><div class="container"><ul class="nav-links"><li><a href="../index.html">ABOUT</a></li><li><a href="../resume.html">RESUME</a></li><li><a href="../portfolio.html">PORTFOLIO</a></li><li class="active"><a href="../blog.html">BLOG</a></li></ul><div class="menu" onclick="openNav()"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div></nav><div id="mySidenav" class="sidenav"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <a href="../index.html">ABOUT</a> <a href="../resume.html">RESUME</a> <a href="../portfolio.html">PORTFOLIO</a> <a href="../blog.html">BLOG</a></div><article id="content" class="markdown-body"></article><footer><div class="container-fluid social-links"><div class="logos"><div class="row"><div class="col-xs-4"><a href="https://github.com/Banhawy" target="_blank"><img src="../img/github-logo.png" alt="github link"></a></div><div class="col-xs-4"><a href="https://www.linkedin.com/in/adham-banhawy/" target="_blank"><img src="../img/linkedin-logo.png" alt="linkdin link"></a></div><div class="col-xs-4"><a href="https://twitter.com/adham_benhawy" target="_blank"><img src="../img/twitter-logo.png" alt="twitter link"></a></div></div></div></div><div class="container-fluid footer"><div class="row"><div class="col-xs-6"><p>3131 Sumter Ave N, Crystal, 55427 MN</p></div><div class="col-xs-6"><p id="email">the.benhawy@ gmail.com</p></div></div></div></footer><script src="../js/jquery.min.js"></script><script src="../js/index.js"></script><script>document.getElementById('content').innerHTML=marked(`<a href="../blog.html">Back to Blog</a><br> 
- # 3 Ways to Create React Components\nReactJS is a great javascript library for reusing HTML code snippets throughout your website. It does so by using JSX and ES6 syntax to infuse your regular Javascript code with pure HTML code and compiles it via Babel to javascript that creates that HTML snippets on the page.\nUse CDN to import React and Babel\nYou can quickly start using React by including the following scripts in your HTML's header tag:\n\`\`\`\n<script src="https://unpkg.com/react@15/dist/react.min.js"><\/script>\n<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"><\/script>\n\`\`\`\nAdditionally, you need to include Babel to compile your React code. Include the following script underneath the others:\n\`\`\`\n<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"><\/script>\n\`\`\`\n## Method #1: Using a Variable Function\nWhen React was first created there was only one way to declare a component. Let's build a simple HTML page with an h1 and a p tag.\nIn your javascript file/tag, declare a variable and use the React.createClass() function to create a component:\n\`\`\`\nvar MyComponent = React.createClass({\n   render() {\n      return <div>\n                <h1>Hello World!</h1>\n                <p>This is my first React Component.</p>\n             </div>\n      }\n})\n\`\`\`\n\nThe variable MyComponent now contains a react component that can be used anywhere on a website.\nTo link that script to an HTML page, first you must have a div element with a unique id on the page.\n\`\`\`<div id="react-component"></div>\`\`\`\nThen in your script after declaring the react component variable, use the ReactDOM.render() function which takes 2 arguments. The first is the react component, and the second is the targeted HTML element.\n\`\`\`ReactDOM.render(<MyComponent />, document.getElementById('react-component'))\`\`\`\nAfter saving and running the HTML file, the page should display without errors:\n\nMethod #2: Using a Class\nFor those who are not caught up with Javascript evolution news, the language now supports classes. You can create a javascript class the extends (a.k.a. inherits) React's Component class and re-write the above method:\n\`\`\`\nclass MyComponent extends React.Component{\n   render() {\n      return <div>\n                <h1>Hello World!</h1>\n                <p>This is my first React Component.</p>\n             </div>\n      }\n}\n\`\`\`\nYou would then use ReactDOM.render() the same way again to target the HTML element by id.\n## Method #3: Using a Stateless Functional Component\nSounds scary when you say it out loud. But it's really means a simple function (as opposed to a variable) that returns a react component. Here you will see some new ES6 syntax that makes javascript codes shorter and easier to read.\nFirst create a const called MyComponent and set it equal to a function () and use the arrow function => to declare the function logic:\n\`\`\`\nconst MyComponent = () => {\n      return <div>\n                <h1>Hello World!</h1>\n                <p>This is my first React Component.</p>\n             </div>\n      }\n}\n\`\`\`\nNotice that we didn't have to use the render() function inside our function here. We just return the HTML div. It's a nice way to reduce amount of code you write.\n\nAnd there you have it. These are the 3 main ways you can create a React component! The best way to learn is to write them out and test them in your browser and don't hesitate to read the documentation!`);</script></body></html>
+            }
+        </style>
+<title>3 Ways to Create React Components - Adham El Banhawy</title>
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="../index.html">ABOUT</a></li>
+                    <li><a href="../resume.html">RESUME</a></li>
+                    <li><a href="../portfolio.html">PORTFOLIO</a></li>
+                    <li class="active"><a href="../blog.html">BLOG</a></li>
+                </ul>
+                <div class="menu" onclick="openNav()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="../index.html">ABOUT</a>
+            <a href="../resume.html">RESUME</a>
+            <a href="../portfolio.html">PORTFOLIO</a>
+            <a href="../blog.html">BLOG</a>
+        </div>
+        <article id="content" class="markdown-body">
+            
+        </article>
+        <footer>
+            <div class="container-fluid social-links">
+                <div class="logos">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <a href="https://github.com/Banhawy" target="_blank">
+                                <img src="../img/github-logo.png" alt="github link">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="https://www.linkedin.com/in/adham-banhawy/" target="_blank">
+                                <img src="../img/linkedin-logo.png" alt="linkdin link">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="https://twitter.com/adham_benhawy" target="_blank">
+                                <img src="../img/twitter-logo.png" alt="twitter link">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid footer">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p>3131 Sumter Ave N, Crystal, 55427 MN</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p id="email">the.benhawy@ gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/index.js"></script>
+        <script>
+            document.getElementById('content').innerHTML=marked(`<a href="../blog.html">Back to Blog</a><br> 
+ # 3 Ways to Create React Components\nReactJS is a great javascript library for reusing HTML code snippets throughout your website. It does so by using JSX and ES6 syntax to infuse your regular Javascript code with pure HTML code and compiles it via Babel to javascript that creates that HTML snippets on the page.\nUse CDN to import React and Babel\nYou can quickly start using React by including the following scripts in your HTML's header tag:\n\`\`\`\n<script src="https://unpkg.com/react@15/dist/react.min.js"><\/script>\n<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"><\/script>\n\`\`\`\nAdditionally, you need to include Babel to compile your React code. Include the following script underneath the others:\n\`\`\`\n<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"><\/script>\n\`\`\`\n## Method #1: Using a Variable Function\nWhen React was first created there was only one way to declare a component. Let's build a simple HTML page with an h1 and a p tag.\nIn your javascript file/tag, declare a variable and use the React.createClass() function to create a component:\n\`\`\`\nvar MyComponent = React.createClass({\n   render() {\n      return <div>\n                <h1>Hello World!</h1>\n                <p>This is my first React Component.</p>\n             </div>\n      }\n})\n\`\`\`\n\nThe variable MyComponent now contains a react component that can be used anywhere on a website.\nTo link that script to an HTML page, first you must have a div element with a unique id on the page.\n\`\`\`<div id="react-component"></div>\`\`\`\nThen in your script after declaring the react component variable, use the ReactDOM.render() function which takes 2 arguments. The first is the react component, and the second is the targeted HTML element.\n\`\`\`ReactDOM.render(<MyComponent />, document.getElementById('react-component'))\`\`\`\nAfter saving and running the HTML file, the page should display without errors:\n\nMethod #2: Using a Class\nFor those who are not caught up with Javascript evolution news, the language now supports classes. You can create a javascript class the extends (a.k.a. inherits) React's Component class and re-write the above method:\n\`\`\`\nclass MyComponent extends React.Component{\n   render() {\n      return <div>\n                <h1>Hello World!</h1>\n                <p>This is my first React Component.</p>\n             </div>\n      }\n}\n\`\`\`\nYou would then use ReactDOM.render() the same way again to target the HTML element by id.\n## Method #3: Using a Stateless Functional Component\nSounds scary when you say it out loud. But it's really means a simple function (as opposed to a variable) that returns a react component. Here you will see some new ES6 syntax that makes javascript codes shorter and easier to read.\nFirst create a const called MyComponent and set it equal to a function () and use the arrow function => to declare the function logic:\n\`\`\`\nconst MyComponent = () => {\n      return <div>\n                <h1>Hello World!</h1>\n                <p>This is my first React Component.</p>\n             </div>\n      }\n}\n\`\`\`\nNotice that we didn't have to use the render() function inside our function here. We just return the HTML div. It's a nice way to reduce amount of code you write.\n\nAnd there you have it. These are the 3 main ways you can create a React component! The best way to learn is to write them out and test them in your browser and don't hesitate to read the documentation!`);
+        </script>
+    </body>
+
+    </html>

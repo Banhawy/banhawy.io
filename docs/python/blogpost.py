@@ -1,13 +1,17 @@
 import os
 import re
 
-header_content = '''<!DOCTYPE html>
+main_content= ''' 
+<!DOCTYPE html>
     <html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Adham El Banhawy">
+        <meta name="description" content="{blog_description}">
+        <meta name="keywords" content="Adham El Banhawy, Adham Elbanhawy, Adham Elbenhawy, Adham, el banhawy, el benhawy, elbanhawy, elbenhawy">
         <!-- Bootstrap 3 -->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
@@ -17,22 +21,21 @@ header_content = '''<!DOCTYPE html>
         <script src="https://use.fontawesome.com/80270d8f99.js"></script>
         <script src="../js/marked.js"></script>
         <style>
-            .markdown-body {
+            .markdown-body {{
                 box-sizing: border-box;
                 min-width: 200px;
                 max-width: 980px;
                 margin: 0 auto;
                 padding: 45px;
-            }
+            }}
 
-            @media (max-width: 767px) {
-                .markdown-body {
+            @media (max-width: 767px) {{
+                .markdown-body {{
                     padding: 15px;
-                }
-            }
+                }}
+            }}
         </style>
-'''
-main_content= ''' <title>{blog_title}</title>
+<title>{blog_title} - Adham El Banhawy</title>
     </head>
     <body>
         <!-- NAV BAR -->
@@ -104,13 +107,14 @@ main_content= ''' <title>{blog_title}</title>
     </html>
 '''
 
-def open_blog(title, content):
+def open_blog(title, content, description):
     html_file = title + '.html'
     path = os.path.join(os.path.dirname(__file__), '..', 'blog', html_file)
     output_file = open(path, 'w')
     rendered_blog = main_content.format(
+        blog_description=description,
         blog_title=title,
         blog_post=content
     )
-    output_file.write(header_content + rendered_blog)
+    output_file.write(rendered_blog)
     output_file.close()
