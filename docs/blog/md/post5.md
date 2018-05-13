@@ -1,129 +1,73 @@
-# Parsing Command Line Arguments in Python
+
+# Switching to HTTPS for Sites Hosted on AWS 
+
+Since [Google's push](https://serverguy.com/security/google-forcing-ssl-certificate-websites/) towards a more secure web and required SSL Certificates for websites to avoid being flagged as unsafe, having your website support HTTPS connections is a must.
+
+If your hosting your business or personal website on Amazon's AWS like me, you might have noticed that Amazon only allows http connection to your domain by default via [Amazon CloudFront](https://aws.amazon.com/cloudfront/). You are also given an SSL certificate that allows HTTPS connections. However, that would require using a different URL that uses the default CloudFront Certificate and ends in *.cloudfront.net*.
+
+If you want your users to use HTTPS and you want to use your own domain name in the URLs for your objects (for example, https://www.example.com/image.jpg), you need to perform several additional steps.
+
+## Who Should Use this Guide 
+There are many ways you can obtain an SSL certificate. In this post, I will only discuss how to get one using **AWS Certificate Manager(ACM)**. You should continue reading if:
+1. You have a website/webapp hosted on [AWS](https://aws.amazon.com/websites/).
+2. You use [Amazon Route 53](https://aws.amazon.com/route53/) to manage your domain name.
+3. You use [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html) to deliver your content.
+
+### Step 1:  Check your Current Certificates 
+ To begin with, check what certificates you already have. Go to the [AWS CloudFront Manager](https://console.aws.amazon.com/cloudfront/home) and go to the *Distributions* page and click on your site's ID. Next, make sure you're on the *General* tab and click **Edit**. This will show you your website's distribution settings. By default you should see that your SSL Certificate is set to the *Default CloudFront Certificate*. 
+
+ ![Check Certificate](../img/aws-1.png) 
+
+ ### Step 2: Request a Certificate with ACM
+ 
+ Since you want your own custom SSL certificate, you should click on **Request or Import a Certificate with ACM**. This will redirect you to the *AWS Certificate Manager* where you can request the certificate. 
+
+ ![Request Domain Name](../img/aws-2.png)
+
+ Add your domain name on the first screen and click Next. You have the option to use an asterix (\\*) as a wild card before your domain name to secure other sites on your domain.
+ If you're going with the wildcard option, make sure you add **both** your base domain name (*example.com*) and the wildcard format (\\*.example.com).
 
 
-Python is a very flexible and popular programming language because of its simplicity, modularity, and power. So far I've been writing python programs that just automated some manual tasks and other statistical analysis work. However, I never really thought about running a python program with an arguement. The most I've interacted with a python program was just testing I/O methods while I was learning it.
+ ![Request Domain Name](../img/aws-3.png)
 
-This was until I was given a task at work that required me to write a reusable command line program that would take a URL and crawl that URL or the URL's entire domain and log the results based on the command line flags.
+ Next, select **DNS validation** as the validation method. This is generally faster than email and can be handled by Amazon Route 53 for you.
 
-## The command line ARGS! (arguements)
-Having your program accept arguements and flags on launch is a neat process. It's certainly the first time I have to program code like that in python (I've done it in node.js but not with flags). After considering my options when it comes to the python library I chose to go with **[argparse](https://docs.python.org/2/library/argparse.htm)**.
+ ![Request Domain Name](../img/aws-3.1.png)
+ 
+ On the next screen, review the information you provided for your request,and choose **Confirm and request**. The following page shows that your request status is pending validation.
 
-First I import the *argparse* library and I define an *ArgumentParser* object that will contain the neccessary information to parse the command line into Python data types. You can think of the ArguementParser object as an empty key/value dictionary.
+ ![Request Domain Name](../img/aws-4.png)
 
-```
-#!/usr/local/bin/python3
-import sys, argparse
-import root_crawl, man_crawl
+If all goes well, the following page will show that your request is pending validation. Come back to that page to check your request status.
 
-parser = argparse.ArgumentParser()
-```
+**Note: After AWS issues the certificate, ACM changes the certificate status to *Issued*. You can continue with the next steps without waiting. However, the desired outcome won't happen without the issuing the certificate.
 
-Now that I have a parser object, I need to fill it with arguements from the command lines. This is done by the *add_arguement()* method which when called on the parser object creates attributes in the parse with the values of the *add_argument* method.
+### Step 3: Update CloudFront Distribution
+Similar to step 1, go to the [AWS CloudFront Manager](https://console.aws.amazon.com/cloudfront/home) and open your site's distributions settings. Click Edit in the **General** tab.
 
-```
-parser.add_argument('url', help="Check a url for straight quotes", type=str)
+Choose *Custom SSL Certificate* and select your certificate from the dropdown list. Click **Yes, Edit**.
 
-args = parser.parse_args()
-```
-The above code tells the parser to take the first command line arguement, call it *url*, assume it is a string type, and provide custom help message about the argument variable when called with the -h/--help flag.
+### Step 4: Configure CloudFront to require HTTPS between viewers and CloudFront
 
-## Putting up the Flags
-Now that I've created a place to store and parse my program's *1st* argument, I want to have additional optional flags to indicate whether the user wants to crawl a *specific page* or an *entire domain*.  
+On the **Behaviors** tab, choose the cache behavior that you want to update, and choose Edit.
 
-The two options I want are:
-1. The ability to provide the website's root/main page and crawl the entire website.
-2. The option to log the results into a spreadhseet.
 
-For the first option I can create a flag, called *--root* or *-r* for short. 
-For the second option I can create a flag, called *--excel* or *-e* for short.
+ ![Viewer Protocol Policy](../img/aws-6.png)
 
-How do we program this?
+For the **Viewer Protocol Policy**, choose one of these options:
 
-We use the same *add_argument()* method again to create these options with slightly different attributes.
+- **Redirect HTTP to HTTPS**
+Viewers can use both protocols, but HTTP requests are automatically redirected to HTTPS requests. CloudFront returns HTTP status code 301 (Moved Permanently) along with the new HTTPS URL. The viewer then resubmits the request to CloudFront using the HTTPS URL.
 
-```
-parser.add_argument('url', help="Check a url for straight quotes", type=str)
+    When a viewer makes an HTTP request that is redirected to an HTTPS request, CloudFront charges for both requests. For the HTTP request, the charge is only for the request and for the headers that CloudFront returns to the viewer. For the HTTPS request, the charge is for the request, and for the headers and the object returned by your origin.
 
-parser.add_argument("-r", "--root", help="Scans all links on website's sitemap", action="store_true")
+- **HTTPS Only**
+Viewers can access your content only if they're using HTTPS. If a viewer sends an HTTP request instead of an HTTPS request, CloudFront returns HTTP status code 403 (Forbidden) and does not return the object.
 
-parser.add_argument("-e", "--excel", help="Logs results into an excel spreadsheet", action="store_true")
+When done, click **Yes, Edit**.
 
-args = parser.parse_args()
-```
+Now all you have to do is to wait for Amazon Route 53 to associate the new domain SSL certificate with your website which might take 15-60 minutes.
 
-When creating a flag, we need to provide the add_argument method with the name of the flag preceeded by the **--** or *-* prefix. (Note: It is not necessary to have both the short and long flag names, but it is preffered). The help attributes is useful to provide the user info about the flags, and the *action* attribute stores the boolean value *True*. 
+For more detailed documentation on how Amazon CloudFront works see [this link](https://aws.amazon.com/documentation/cloudfront/). 
 
-Notice that we haven't touched on the subject of crawling which is discussed in a separate blog post.
-
-## Implementing the Logic
-
-Now that we have the positional arguement and the optional flags defined, it's time to implement the logic of the program.
-
-First we start off with the basecase. The simplest way a user would use the program is to to call the program and provide it with just one URL to crawl.
-```
-python3 scan URL
-```
-In this case the program will take the first command line arguement *URL* and match it against the ArgParse parser object's attributes. It will store the URL given in the command line in the first non-flag attribute *url* of the parser object.
-
-What about the other attributes of the parser object, namely --root and --excel?
-
-They default to *False*.
-To see this inaction you can print out the parser object *args* to screen to get the following:
-```
-$ python3 scan.py  https://www.google.com
-
-=>$ Namespace(excel=False, root=False, url='https://www.google.com')
-``` 
-To access and use the URL in the first command line arguement we can use **args.url**
-
-In my case, I will pass the url and the truth value of the excel flag to to a function that will crawl the webpage and log the results to a spreadsheet if the excel value is True. This function is defined in a separate file so I import and use it.
-
-```
-man_crawl.crawl(args.url, args.excel)
-```
-Now any website put as the first command line arguement will be passed as the first parameter of the crawler function. I also pass the excel attribute of the parser object which defaults to false because the *-e/--excel* flag was not used in the command line. If the user were to use the *--excel* flag then *args.excel* would be set to *True*.
-
-The other case is if the user uses the *-r/--root* flag to indicate the intention to crawl the entire website. In this case we need to modify the code to check first if the root flag was used:
-```
-if args.root:
-    root_crawl.crawl(args.url, args.excel)
-else:
-    man_crawl.crawl(args.url, args.excel)
-``` 
-Of course, if the root flag is used then it would use another function from another file that I import as well.
-
-Best thing about the *argparse* module is that it automatically handles the **-h/--help** flag that pulls all those flag help info written earlier and displays them nicely on the command line.
-
-```
-$ python3 scan.py -h
-usage: scan.py [-h] [-r] [-e] url
-
-positional arguments:
-  url          Check a url for straight quotes
-
-optional arguments:
-  -h, --help   Show this help message and exit
-  -r, --root   Scans all links on website's sitemap
-  -e, --excel  Logs results into an excel spreadsheet
-```
-
-In the end the code should look like this:
-```
-#!/usr/local/bin/python3
-import argparse
-import root_crawl, man_crawl
-
-parser = argparse.ArgumentParser()
-parser.add_argument('url', help="Check a url for straight quotes", type=str)
-parser.add_argument("-r", "--root", help="Scans all links on website's sitemap", action="store_true")
-parser.add_argument("-e", "--excel", help="Logs results into an excel spreadsheet", action="store_true")
-
-args = parser.parse_args()
-
-if args.root:
-    root_crawl.crawl(args.url, args.excel)
-else:
-    man_crawl.crawl(args.url, args.excel)
-```
-
-Of course, this interaction could be implemnted differently using I/O but it just so happens that this was the requirement, and for UNIX and terminal users this should be very user friendly and efficient.
+For detailed documentation on how Amazon Route 53 works, see [this link.](https://aws.amazon.com/documentation/acm/)

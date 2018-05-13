@@ -1,41 +1,129 @@
-# Coding a Blog with Markdown, Python and Javascript
+# Parsing Command Line Arguments in Python
 
-## The Challenge:
-I like blogging about my personal projects. It helps reinforce my learning and sometimes helps guid others with theirs. I also like writing in *markdown* which is the syntax used in github pages. A few months ago I could have simply used github pages to accomplish that task, but I have my own domain and server now so that's not an option. I have been using **[medium](https://medium.com/@the.benhawy)** to write my blogposts. It's a great platform with a large audience, but I really despise the fact that it does not support markdown format as of yet. 
 
-The idea I have in mind is that I would write my blogs offline in markdown once, save them in a repo on github, and be able to share and upload it anywhere that supports markdown. So I decided to build my own solution from scratch. 
+Python is a very flexible and popular programming language because of its simplicity, modularity, and power. So far I've been writing python programs that just automated some manual tasks and other statistical analysis work. However, I never really thought about running a python program with an arguement. The most I've interacted with a python program was just testing I/O methods while I was learning it.
 
-## The Solution
-I decided to use a compination of **python** and **javascript** to automate my blogging process. The end result would be me writing a markdown file, referencing the name, path, and metadata of that file in a python script which injects it into an html blog template that uses javascript to compile markdown into html, and css to apply github's markdown stylings to the page.
+This was until I was given a task at work that required me to write a reusable command line program that would take a URL and crawl that URL or the URL's entire domain and log the results based on the command line flags.
 
-### Step 1: Write a Python Blog Class
-This is a relatively simple step. I created a file called *blog_object.py* with a class called **Blog** that would be used in other python files to create an object that stores information about the blogpost. The information I'm interested in are: title, description, topic, image, and url.
+## The command line ARGS! (arguements)
+Having your program accept arguements and flags on launch is a neat process. It's certainly the first time I have to program code like that in python (I've done it in node.js but not with flags). After considering my options when it comes to the python library I chose to go with **[argparse](https://docs.python.org/2/library/argparse.htm)**.
 
-The code looks like this:
+First I import the *argparse* library and I define an *ArgumentParser* object that will contain the neccessary information to parse the command line into Python data types. You can think of the ArguementParser object as an empty key/value dictionary.
+
 ```
-class Blog():
-    """ This class provides a way of storing project related information"""
-    def __init__(self, title, description, topic, image, url):
-        self.title = title
-        self.description = description
-        self.image_path = image
-        self.topic = topic
-        self.url = url
-```
-### Step 2: Write a Python file that creates Blogpost objects
-In this step, I create a file called *blog_list.py* in which I create a *Blog* object for each post I write.  
-```
-import blog_object
+#!/usr/local/bin/python3
+import sys, argparse
+import root_crawl, man_crawl
 
-post1 = blog_object.Blog('My Developer Journey', 'A personal story about how I chose to become a developer', 
-'general', 'img/self.png', 'blog/My Developer Journey.html')
+parser = argparse.ArgumentParser()
 ```
-For example, after importing the blog_object file in which I declared the Blog class, I create a blog object for my first post stored in the variable *post1*. This object takes 5 parameters that I defined in the Blog class, such as *title, description, topic, etc.*  
 
-****Note:** the **image** parameter takes in a path to an image in my website's file structure that will later be used as a thumbnail in blog listings. Similarly, the **url** parameter takes in the path to the html file of the blogpost which I'll discuss how it would be generated later on.
-```
-blog_list = [personal_story, post2, post3]
+Now that I have a parser object, I need to fill it with arguements from the command lines. This is done by the *add_arguement()* method which when called on the parser object creates attributes in the parse with the values of the *add_argument* method.
 
-blog.open_blog(blog_list)
 ```
-Next I create a list/array of blog posts called
+parser.add_argument('url', help="Check a url for straight quotes", type=str)
+
+args = parser.parse_args()
+```
+The above code tells the parser to take the first command line arguement, call it *url*, assume it is a string type, and provide custom help message about the argument variable when called with the -h/--help flag.
+
+## Putting up the Flags
+Now that I've created a place to store and parse my program's *1st* argument, I want to have additional optional flags to indicate whether the user wants to crawl a *specific page* or an *entire domain*.  
+
+The two options I want are:
+1. The ability to provide the website's root/main page and crawl the entire website.
+2. The option to log the results into a spreadhseet.
+
+For the first option I can create a flag, called *--root* or *-r* for short. 
+For the second option I can create a flag, called *--excel* or *-e* for short.
+
+How do we program this?
+
+We use the same *add_argument()* method again to create these options with slightly different attributes.
+
+```
+parser.add_argument('url', help="Check a url for straight quotes", type=str)
+
+parser.add_argument("-r", "--root", help="Scans all links on website's sitemap", action="store_true")
+
+parser.add_argument("-e", "--excel", help="Logs results into an excel spreadsheet", action="store_true")
+
+args = parser.parse_args()
+```
+
+When creating a flag, we need to provide the add_argument method with the name of the flag preceeded by the **--** or *-* prefix. (Note: It is not necessary to have both the short and long flag names, but it is preffered). The help attributes is useful to provide the user info about the flags, and the *action* attribute stores the boolean value *True*. 
+
+Notice that we haven't touched on the subject of crawling which is discussed in a separate blog post.
+
+## Implementing the Logic
+
+Now that we have the positional arguement and the optional flags defined, it's time to implement the logic of the program.
+
+First we start off with the basecase. The simplest way a user would use the program is to to call the program and provide it with just one URL to crawl.
+```
+python3 scan URL
+```
+In this case the program will take the first command line arguement *URL* and match it against the ArgParse parser object's attributes. It will store the URL given in the command line in the first non-flag attribute *url* of the parser object.
+
+What about the other attributes of the parser object, namely --root and --excel?
+
+They default to *False*.
+To see this inaction you can print out the parser object *args* to screen to get the following:
+```
+$ python3 scan.py  https://www.google.com
+
+=>$ Namespace(excel=False, root=False, url='https://www.google.com')
+``` 
+To access and use the URL in the first command line arguement we can use **args.url**
+
+In my case, I will pass the url and the truth value of the excel flag to to a function that will crawl the webpage and log the results to a spreadsheet if the excel value is True. This function is defined in a separate file so I import and use it.
+
+```
+man_crawl.crawl(args.url, args.excel)
+```
+Now any website put as the first command line arguement will be passed as the first parameter of the crawler function. I also pass the excel attribute of the parser object which defaults to false because the *-e/--excel* flag was not used in the command line. If the user were to use the *--excel* flag then *args.excel* would be set to *True*.
+
+The other case is if the user uses the *-r/--root* flag to indicate the intention to crawl the entire website. In this case we need to modify the code to check first if the root flag was used:
+```
+if args.root:
+    root_crawl.crawl(args.url, args.excel)
+else:
+    man_crawl.crawl(args.url, args.excel)
+``` 
+Of course, if the root flag is used then it would use another function from another file that I import as well.
+
+Best thing about the *argparse* module is that it automatically handles the **-h/--help** flag that pulls all those flag help info written earlier and displays them nicely on the command line.
+
+```
+$ python3 scan.py -h
+usage: scan.py [-h] [-r] [-e] url
+
+positional arguments:
+  url          Check a url for straight quotes
+
+optional arguments:
+  -h, --help   Show this help message and exit
+  -r, --root   Scans all links on website's sitemap
+  -e, --excel  Logs results into an excel spreadsheet
+```
+
+In the end the code should look like this:
+```
+#!/usr/local/bin/python3
+import argparse
+import root_crawl, man_crawl
+
+parser = argparse.ArgumentParser()
+parser.add_argument('url', help="Check a url for straight quotes", type=str)
+parser.add_argument("-r", "--root", help="Scans all links on website's sitemap", action="store_true")
+parser.add_argument("-e", "--excel", help="Logs results into an excel spreadsheet", action="store_true")
+
+args = parser.parse_args()
+
+if args.root:
+    root_crawl.crawl(args.url, args.excel)
+else:
+    man_crawl.crawl(args.url, args.excel)
+```
+
+Of course, this interaction could be implemnted differently using I/O but it just so happens that this was the requirement, and for UNIX and terminal users this should be very user friendly and efficient.

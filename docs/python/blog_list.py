@@ -8,4 +8,5 @@ post2 = blog_object.Blog('3 Ways to Create React Components', 'A brief indtoduct
 post3 = blog_object.Blog('Making a Python Web Crawler', 'How I made a Python Web Crawler to automate a boring daily task', 'python', 'img/post2-0.png', 'blog/Making a Python Web Crawler.html')
 post5 = blog_object.Blog('Parsing Command Line Arguments in Python', 'Using python to read input and flags from the command line', 'python', 'img/post5.png', 'blog/Parsing Command Line Arguments in Python.html')
 post6 = blog_object.Blog('Switching to HTTPS for Sites Hosted on AWS', 'How to register SSL Certificate on AWS', 'aws devops', 'img/post6.png', 'blog/Switching to HTTPS for Sites Hosted on AWS.html')
-blog_list = [personal_story, post2, post3, post5, post6]
+post7 = blog_object.Blog('My Developer Journey Pt 2', 'How I dropped out of an American CS program, went home to Egypt, and immediately got a dev job at a startup', 'general', 'img/post7.png', 'blog/My Developer Journey Pt 2.html')
+blog_list = [personal_story, post2, post3, post5, post6, post7]
